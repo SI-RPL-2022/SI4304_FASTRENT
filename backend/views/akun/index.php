@@ -12,17 +12,17 @@ $this->title = 'Akun';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="box">
-    <div class="box-body akun-index">
+     <div class="box-body akun-index">
 
 
-        <p>
-            <?= Html::a('<i class="fa fa-plus"></i> Tambah Akun', ['create'], ['class' => 'btn btn-success']) ?>
-        </p>
+          <p>
+               <?= Html::a('<i class="fa fa-plus"></i> Tambah Akun', ['create'], ['class' => 'btn btn-success']) ?>
+          </p>
 
-        <?php // echo $this->render('_search', ['model' => $searchModel]); 
+          <?php // echo $this->render('_search', ['model' => $searchModel]); 
         ?>
 
-        <?= GridView::widget([
+          <?= GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
             'panel' => ['type' => 'primary', 'heading' => '<span class="fa fa-edit"></span> ' . $this->title],
@@ -80,5 +80,5 @@ $this->params['breadcrumbs'][] = $this->title;
         ]); ?>
 
 
-    </div>
+     </div>
 </div>

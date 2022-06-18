@@ -7,20 +7,20 @@ use yii\grid\GridView;
 /* @var $searchModel backend\models\KantorSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Kantor';
+$this->title = 'Data Kantor';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="box">
-    <div class="box-body kantor-index">
+     <div class="box-body kantor-index">
 
-        
-        <p>
-            <?= Html::a('Tambah Kantor', ['create'], ['class' => 'btn btn-success']) ?>
-        </p>
 
-                <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-    
-            <?= GridView::widget([
+          <p>
+               <?= Html::a('Tambah Kantor', ['create'], ['class' => 'btn btn-success']) ?>
+          </p>
+
+          <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
+          <?= GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
         'columns' => [
@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ['class' => 'yii\grid\ActionColumn'],
             ],
         ]); ?>
-    
-    
-    </div>
+
+
+     </div>
 </div>
