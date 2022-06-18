@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Jun 2022 pada 09.41
--- Versi server: 10.4.21-MariaDB
--- Versi PHP: 8.0.11
+-- Generation Time: Jun 18, 2022 at 09:51 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `akun`
+-- Table structure for table `akun`
 --
 
 CREATE TABLE `akun` (
@@ -37,7 +37,7 @@ CREATE TABLE `akun` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `akun`
+-- Dumping data for table `akun`
 --
 
 INSERT INTO `akun` (`id_akun`, `id_parent`, `kode_akun`, `nama_akun`, `debet_kredit`, `kategori`) VALUES
@@ -63,7 +63,7 @@ INSERT INTO `akun` (`id_akun`, `id_parent`, `kode_akun`, `nama_akun`, `debet_kre
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `app_setting`
+-- Table structure for table `app_setting`
 --
 
 CREATE TABLE `app_setting` (
@@ -74,17 +74,17 @@ CREATE TABLE `app_setting` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `app_setting`
+-- Dumping data for table `app_setting`
 --
 
 INSERT INTO `app_setting` (`id_app_setting`, `setting_name`, `is_image`, `value`) VALUES
-(1, 'APP-NAME', 0, 'KEL - 8'),
+(1, 'APP-NAME', 0, 'KEL 8'),
 (2, 'APP-NAME-SINGKAT', 0, 'KEL 8'),
 (3, 'APP-NAME-SINGKATAN', 0, 'PB'),
 (4, 'Logo', 1, 'Logo.png'),
 (5, 'Icon', 1, 'Icon.png'),
 (6, 'ADDRESS', 0, 'Jalan Percetakan Negara Nomor 23 Jakarta - 10560 - Indonesia Selengkapnya'),
-(7, 'Copyright', 0, 'Copyright 2022 KELOMPOK 8. All Right Reserved'),
+(7, 'Copyright', 0, 'Copyright {TAHUN} PPID BPOM. All Right Reserved'),
 (8, 'MAIN-BACKGROUND', 1, 'MAIN-BACKGROUND.jpg'),
 (9, 'ABOUT-APP', 0, 'Aplikasi HRM'),
 (10, 'APP-VERSION', 0, '1.0.0 (Beta)'),
@@ -103,7 +103,7 @@ INSERT INTO `app_setting` (`id_app_setting`, `setting_name`, `is_image`, `value`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `auth_assignment`
+-- Table structure for table `auth_assignment`
 --
 
 CREATE TABLE `auth_assignment` (
@@ -113,7 +113,7 @@ CREATE TABLE `auth_assignment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `auth_assignment`
+-- Dumping data for table `auth_assignment`
 --
 
 INSERT INTO `auth_assignment` (`item_name`, `user_id`, `created_at`) VALUES
@@ -133,7 +133,7 @@ INSERT INTO `auth_assignment` (`item_name`, `user_id`, `created_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `auth_item`
+-- Table structure for table `auth_item`
 --
 
 CREATE TABLE `auth_item` (
@@ -147,7 +147,7 @@ CREATE TABLE `auth_item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `auth_item`
+-- Dumping data for table `auth_item`
 --
 
 INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `created_at`, `updated_at`) VALUES
@@ -488,7 +488,7 @@ INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `cr
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `auth_item_child`
+-- Table structure for table `auth_item_child`
 --
 
 CREATE TABLE `auth_item_child` (
@@ -497,7 +497,7 @@ CREATE TABLE `auth_item_child` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data untuk tabel `auth_item_child`
+-- Dumping data for table `auth_item_child`
 --
 
 INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
@@ -797,7 +797,7 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `auth_rule`
+-- Table structure for table `auth_rule`
 --
 
 CREATE TABLE `auth_rule` (
@@ -810,7 +810,7 @@ CREATE TABLE `auth_rule` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `bank_pembayaran`
+-- Table structure for table `bank_pembayaran`
 --
 
 CREATE TABLE `bank_pembayaran` (
@@ -823,7 +823,7 @@ CREATE TABLE `bank_pembayaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `bank_pembayaran`
+-- Dumping data for table `bank_pembayaran`
 --
 
 INSERT INTO `bank_pembayaran` (`id_bank_pembayaran`, `nama_bank`, `nama_bank_short`, `nomor_rekening`, `atas_nama`, `kode`) VALUES
@@ -832,7 +832,7 @@ INSERT INTO `bank_pembayaran` (`id_bank_pembayaran`, `nama_bank`, `nama_bank_sho
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `base_pendapatan`
+-- Table structure for table `base_pendapatan`
 --
 
 CREATE TABLE `base_pendapatan` (
@@ -842,7 +842,7 @@ CREATE TABLE `base_pendapatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `base_pendapatan`
+-- Dumping data for table `base_pendapatan`
 --
 
 INSERT INTO `base_pendapatan` (`id_base_pendapatan`, `type_pendapatan`, `base`) VALUES
@@ -851,7 +851,7 @@ INSERT INTO `base_pendapatan` (`id_base_pendapatan`, `type_pendapatan`, `base`) 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `base_salary`
+-- Table structure for table `base_salary`
 --
 
 CREATE TABLE `base_salary` (
@@ -873,7 +873,7 @@ CREATE TABLE `base_salary` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `base_salary`
+-- Dumping data for table `base_salary`
 --
 
 INSERT INTO `base_salary` (`id_base_salary`, `id_pegawai`, `gaji_pokok`, `tunjangan1`, `tunjangan2`, `tunjangan3`, `tunjangan4`, `tunjangan5`, `rate_lembur`, `rate_kehadiran`, `property1`, `property2`, `property3`, `property4`, `property5`) VALUES
@@ -883,7 +883,7 @@ INSERT INTO `base_salary` (`id_base_salary`, `id_pegawai`, `gaji_pokok`, `tunjan
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `basic_packing`
+-- Table structure for table `basic_packing`
 --
 
 CREATE TABLE `basic_packing` (
@@ -893,7 +893,7 @@ CREATE TABLE `basic_packing` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `basic_packing`
+-- Dumping data for table `basic_packing`
 --
 
 INSERT INTO `basic_packing` (`id_basic_packing`, `nama`, `deskripsi`) VALUES
@@ -904,7 +904,7 @@ INSERT INTO `basic_packing` (`id_basic_packing`, `nama`, `deskripsi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `basic_packing_item`
+-- Table structure for table `basic_packing_item`
 --
 
 CREATE TABLE `basic_packing_item` (
@@ -919,7 +919,7 @@ CREATE TABLE `basic_packing_item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `basic_packing_item`
+-- Dumping data for table `basic_packing_item`
 --
 
 INSERT INTO `basic_packing_item` (`id_basic_packing_item`, `id_basic_packing`, `id_material_support`, `jumlah`, `keterangan`, `created_id_user`, `created_date`, `created_ip_address`) VALUES
@@ -931,7 +931,7 @@ INSERT INTO `basic_packing_item` (`id_basic_packing_item`, `id_basic_packing`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `contact_us`
+-- Table structure for table `contact_us`
 --
 
 CREATE TABLE `contact_us` (
@@ -951,7 +951,7 @@ CREATE TABLE `contact_us` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `contact_us`
+-- Dumping data for table `contact_us`
 --
 
 INSERT INTO `contact_us` (`id_contact_us`, `id_office_region`, `name`, `email`, `subject`, `message`, `request_date`, `request_time`, `registered_ip_address`, `status`, `action_date`, `action_by`, `action_notes`) VALUES
@@ -970,7 +970,7 @@ INSERT INTO `contact_us` (`id_contact_us`, `id_office_region`, `name`, `email`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `content`
+-- Table structure for table `content`
 --
 
 CREATE TABLE `content` (
@@ -996,7 +996,7 @@ CREATE TABLE `content` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `content`
+-- Dumping data for table `content`
 --
 
 INSERT INTO `content` (`id_content`, `keyname`, `id_section_content`, `id_frontend_topnav`, `content_lang1`, `content_lang2`, `have_image`, `image_filename`, `have_colorbox`, `color_box`, `have_info1`, `info1`, `have_info2`, `info2`, `have_info3`, `info3`, `updated_date`, `updated_user`, `updated_ip_address`) VALUES
@@ -1016,7 +1016,7 @@ INSERT INTO `content` (`id_content`, `keyname`, `id_section_content`, `id_fronte
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `cpanel_leftmenu`
+-- Table structure for table `cpanel_leftmenu`
 --
 
 CREATE TABLE `cpanel_leftmenu` (
@@ -1035,7 +1035,7 @@ CREATE TABLE `cpanel_leftmenu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `cpanel_leftmenu`
+-- Dumping data for table `cpanel_leftmenu`
 --
 
 INSERT INTO `cpanel_leftmenu` (`id_leftmenu`, `id_parent_leftmenu`, `has_child`, `menu_name`, `menu_icon`, `value_indo`, `value_eng`, `url`, `is_public`, `auth`, `mobile_display`, `visible`) VALUES
@@ -1059,7 +1059,7 @@ INSERT INTO `cpanel_leftmenu` (`id_leftmenu`, `id_parent_leftmenu`, `has_child`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `customer`
+-- Table structure for table `customer`
 --
 
 CREATE TABLE `customer` (
@@ -1076,7 +1076,7 @@ CREATE TABLE `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `customer`
+-- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`id_customer`, `nama_customer`, `alamat`, `id_kabupaten`, `nomor_telepon`, `email`, `npwp`, `nama_kontak`, `limit_kredit`, `total_kredit`) VALUES
@@ -1086,7 +1086,7 @@ INSERT INTO `customer` (`id_customer`, `nama_customer`, `alamat`, `id_kabupaten`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `customer_kredit`
+-- Table structure for table `customer_kredit`
 --
 
 CREATE TABLE `customer_kredit` (
@@ -1100,7 +1100,7 @@ CREATE TABLE `customer_kredit` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `customer_kredit_bayar`
+-- Table structure for table `customer_kredit_bayar`
 --
 
 CREATE TABLE `customer_kredit_bayar` (
@@ -1120,7 +1120,7 @@ CREATE TABLE `customer_kredit_bayar` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `cv_pendidikan`
+-- Table structure for table `cv_pendidikan`
 --
 
 CREATE TABLE `cv_pendidikan` (
@@ -1139,7 +1139,7 @@ CREATE TABLE `cv_pendidikan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `frontend_topnav`
+-- Table structure for table `frontend_topnav`
 --
 
 CREATE TABLE `frontend_topnav` (
@@ -1156,7 +1156,7 @@ CREATE TABLE `frontend_topnav` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `frontend_topnav`
+-- Dumping data for table `frontend_topnav`
 --
 
 INSERT INTO `frontend_topnav` (`id_frontend_topnav`, `id_parent_topnav`, `is_expanded`, `menu_name_lang1`, `menu_name_lang2`, `description_lang1`, `description_lang2`, `link_url`, `file_image`, `is_visible`) VALUES
@@ -1185,7 +1185,7 @@ INSERT INTO `frontend_topnav` (`id_frontend_topnav`, `id_parent_topnav`, `is_exp
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `gudang`
+-- Table structure for table `gudang`
 --
 
 CREATE TABLE `gudang` (
@@ -1200,7 +1200,7 @@ CREATE TABLE `gudang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `gudang`
+-- Dumping data for table `gudang`
 --
 
 INSERT INTO `gudang` (`id_gudang`, `nama_gudang`, `kode_gudang`, `alamat`, `deskripsi`, `id_outlet_penjualan`, `longitude`, `latitude`) VALUES
@@ -1213,7 +1213,7 @@ INSERT INTO `gudang` (`id_gudang`, `nama_gudang`, `kode_gudang`, `alamat`, `desk
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `home_info`
+-- Table structure for table `home_info`
 --
 
 CREATE TABLE `home_info` (
@@ -1224,7 +1224,7 @@ CREATE TABLE `home_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `home_info`
+-- Dumping data for table `home_info`
 --
 
 INSERT INTO `home_info` (`id_home_info`, `no`, `judul`, `deskripsi`) VALUES
@@ -1235,7 +1235,7 @@ INSERT INTO `home_info` (`id_home_info`, `no`, `judul`, `deskripsi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `hrm_absensi_pegawai`
+-- Table structure for table `hrm_absensi_pegawai`
 --
 
 CREATE TABLE `hrm_absensi_pegawai` (
@@ -1257,7 +1257,7 @@ CREATE TABLE `hrm_absensi_pegawai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `hrm_absensi_pegawai`
+-- Dumping data for table `hrm_absensi_pegawai`
 --
 
 INSERT INTO `hrm_absensi_pegawai` (`id_hrm_absensi_pegawai`, `id_pegawai`, `tanggal_absen`, `id_mst_jenis_absensi`, `waktu_login`, `waktu_logout`, `izin_antara_logout`, `izin_antara_login`, `total_menit_kerja`, `created_date`, `created_id_user`, `created_ip_address`, `modified_date`, `modified_id_user`, `modified_ip_address`) VALUES
@@ -1268,7 +1268,7 @@ INSERT INTO `hrm_absensi_pegawai` (`id_hrm_absensi_pegawai`, `id_pegawai`, `tang
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `hrm_mst_jenis_absensi`
+-- Table structure for table `hrm_mst_jenis_absensi`
 --
 
 CREATE TABLE `hrm_mst_jenis_absensi` (
@@ -1278,7 +1278,7 @@ CREATE TABLE `hrm_mst_jenis_absensi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `hrm_mst_jenis_absensi`
+-- Dumping data for table `hrm_mst_jenis_absensi`
 --
 
 INSERT INTO `hrm_mst_jenis_absensi` (`id_mst_jenis_absensi`, `jenis_absensi`, `is_aktif`) VALUES
@@ -1291,7 +1291,7 @@ INSERT INTO `hrm_mst_jenis_absensi` (`id_mst_jenis_absensi`, `jenis_absensi`, `i
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `hrm_pegawai`
+-- Table structure for table `hrm_pegawai`
 --
 
 CREATE TABLE `hrm_pegawai` (
@@ -1420,21 +1420,21 @@ CREATE TABLE `hrm_pegawai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `hrm_pegawai`
+-- Dumping data for table `hrm_pegawai`
 --
 
 INSERT INTO `hrm_pegawai` (`id_pegawai`, `id_perusahaan`, `userid`, `id_user`, `cid`, `no_dossier`, `NIP`, `nama_lengkap`, `foto`, `tempat_lahir`, `tanggal_lahir`, `usia`, `usia_lebih_bulan`, `jenis_kelamin`, `golongan_darah`, `tinggi_badan`, `berat_badan`, `agama`, `status_pernikahan`, `no_identitas_pribadi`, `NPWP`, `no_kartu_kesehatan`, `no_kartu_tenagakerja`, `kartu_kesehatan`, `no_kartu_keluarga`, `scan_ktp`, `scan_bpjs`, `scan_npwp`, `scan_paraf`, `scan_kk`, `scan_tandatangan`, `id_hrm_status_pegawai`, `id_hrm_status_organik`, `status_tenaga_kerja`, `reg_tanggal_masuk`, `reg_tanggal_diangkat`, `reg_tanggal_training`, `reg_status_pegawai`, `tanggal_mpp`, `tanggal_pensiun`, `tanggal_terminasi`, `id_hrm_mst_jenis_terminasi_bi`, `gelar_akademik`, `gelar_profesi`, `pdk_id_tingkatpendidikan`, `pdk_sekolah_terakhir`, `pdk_jurusan_terakhir`, `pdk_ipk_terakhir`, `pdk_tahun_lulus`, `alamat_termutakhir`, `alamat_sesuai_identitas`, `mobilephone1`, `mobilephone2`, `telepon_rumah`, `fax_rumah`, `email1`, `email2`, `id_kk_profil_posisi`, `jbt_id_jabatan`, `jbt_jabatan`, `jbt_id_tingkat_jabatan`, `jbt_no_sk_jabatan`, `jbt_tgl_keputusan`, `jbt_tanggal_berlaku`, `jbt_keterangan_mutasi`, `pkt_id_pangkat`, `pkt_no_sk`, `pkt_tgl_keputusan`, `pkt_tgl_berlaku`, `pkt_gaji_pokok`, `pkt_id_jenis_kenaikan_pangkat`, `pkt_eselon`, `pkt_ruang`, `pos_id_hrm_kantor`, `pos_id_hrm_unit_kerja`, `pos_kantor`, `pos_id_kk_profil_posisi`, `sta_total_hukuman_disiplin`, `sta_total_penghargaan`, `pst_masabakti_20`, `pst_masabakti_25`, `pst_masabakti_30`, `pst_masabakti_35`, `pst_masabakti_40`, `cuti_besar_terakhir_start`, `cuti_besar_terakhir_end`, `cuti_besar_terakhir_ke`, `cuti_besar_plan_1`, `cuti_besar_plan_2`, `cuti_besar_plan_3`, `cuti_besar_plan_4`, `cuti_besar_plan_5`, `cuti_besar_plan_6`, `cuti_besar_plan_7`, `cuti_besar_ambil_1`, `cuti_besar_ambil_2`, `cuti_besar_ambil_3`, `cuti_besar_ambil_4`, `cuti_besar_ambil_5`, `cuti_besar_ambil_6`, `cuti_besar_ambil_7`, `cuti_besar_aktual_1`, `cuti_besar_aktual_2`, `cuti_besar_aktual_3`, `cuti_besar_aktual_4`, `cuti_besar_aktual_5`, `cuti_besar_aktual_6`, `cuti_besar_aktual_7`, `cuti_besar_aktual_end_1`, `cuti_besar_aktual_end_2`, `cuti_besar_aktual_end_3`, `cuti_besar_aktual_end_4`, `cuti_besar_aktual_end_5`, `cuti_besar_aktual_end_6`, `cuti_besar_aktual_end_7`, `reff_id`, `created_date`, `created_user`, `created_ip_address`, `modified_date`, `modified_user`, `modified_ip_address`) VALUES
-(1, 201501, '', 0, 145286948, 0, '12311', 'BRYAN RONALD TALISMAN', NULL, '', '2001-11-08', 0, 0, 'PRIA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'JL. MERDEKA NO.77 MANOKWARI', '082299790811', NULL, NULL, NULL, 'bryanronaldtalisman@mail.com', '', 0, NULL, 'TENGA LAPANGAN', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-22', 'admin', '::1', '0000-00-00', '', ''),
-(3, 0, '196505091993092002', 0, 154698399, 0, '7789', 'DEA GINA SIHOTANG', NULL, 'Soppeng', '2001-01-03', 54, 6, 'WANITA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', '1965-05-09', '1965-05-09', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'JL. PERMATA BUAHBATU', '08123456789', NULL, NULL, NULL, 'deagina@gmail.com', '', 0, NULL, 'MANAGER', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'III', 'IV /B', NULL, NULL, 'BADAN KESATUAN BANGSA DAN POLITIK', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '', '', '2019-11-12', '196505091993092002', '192.168.30.25'),
-(4, 201501, '', 0, 30930530, 0, '9999', 'DARRYL BASTIAN', NULL, '', '1998-12-02', 0, 0, 'PRIA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. GARUDA NO.47 BANDUNG', '085156703707', NULL, NULL, NULL, 'darrylbastian@gmail.com', '', 0, NULL, 'MANAGER KEPALA GUDANG', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-08-18', 'admin', '::1', '0000-00-00', '', ''),
-(5, 201501, '', 0, 123767543, 0, '89111', 'AGRIVA DETTA GINTING', NULL, '', '2021-08-30', 0, 0, 'WANITA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Jakarta 28 Jakrta Urta', '87291231', NULL, NULL, NULL, 'agrivadetta@gmail.com', '', 0, NULL, 'Kepala Cabang', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-09-04', 'admin', '::1', '0000-00-00', '', ''),
-(6, 201501, '', 0, 72566225, 0, '1810', 'SHINTA VALENINA', NULL, '', '1982-09-01', 0, 0, 'WANITA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Gajah Mungkur 28', '08192131', NULL, NULL, NULL, 'shintavalenina@gmail.com', '', 0, NULL, 'Kepala Cabang Sungkur', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-09-04', 'admin', '::1', '0000-00-00', '', ''),
-(7, 201501, '', 0, 126484571, 0, '7812', 'MICHAEL CHRISTENSEN BONAR', NULL, '', '2022-04-21', 0, 0, 'PRIA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'JL. KOPO', '082119680625', NULL, NULL, NULL, 'michaelchristensen@mial.com', '', 0, NULL, 'TENGA LAPANGAN 2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-22', 'admin', '::1', '0000-00-00', '', '');
+(1, 201501, '', 0, 145286948, 0, '12311', '23', NULL, '', '2022-04-13', 0, 0, 'PRIA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '213', '123', NULL, NULL, NULL, 'sasd@mail.com', '', 0, NULL, '12312', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-22', 'admin', '::1', '0000-00-00', '', ''),
+(3, 0, '196505091993092002', 0, 154698399, 0, '7789', 'Andita Wati', NULL, 'Soppeng', '1965-05-09', 54, 6, 'WANITA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', '1965-05-09', '1965-05-09', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Gugur Belakang', '0182921', NULL, NULL, NULL, 'andita@gmail.com', '', 0, NULL, 'Tenaga Lapangan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'III', 'IV /B', NULL, NULL, 'BADAN KESATUAN BANGSA DAN POLITIK', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '', '', '2019-11-12', '196505091993092002', '192.168.30.25'),
+(4, 201501, '', 0, 30930530, 0, '9999', 'Rosalinda', NULL, '', '2021-08-09', 0, 0, 'PRIA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Jakarta 28 Jakrta Urta', '8729123', NULL, NULL, NULL, 'sudirman@gmail.com', '', 0, NULL, 'Kepala Gudang', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-08-18', 'admin', '::1', '0000-00-00', '', ''),
+(5, 201501, '', 0, 123767543, 0, '89111', 'Meli', NULL, '', '2021-08-30', 0, 0, 'PRIA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Jakarta 28 Jakrta Urta', '87291231', NULL, NULL, NULL, 'sudirman2@gmail.com', '', 0, NULL, 'Kepala Cabang', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-09-04', 'admin', '::1', '0000-00-00', '', ''),
+(6, 201501, '', 0, 72566225, 0, '1810', 'Putri Handayani', NULL, '', '1982-09-01', 0, 0, 'WANITA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Gajah Mungkur 28', '08192131', NULL, NULL, NULL, 'sinung@ithb.ac.id', '', 0, NULL, 'Kepala Cabang Sungkur', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-09-04', 'admin', '::1', '0000-00-00', '', ''),
+(7, 201501, '', 0, 126484571, 0, '7812', 'Ellysa', NULL, '', '2022-04-21', 0, 0, 'PRIA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Gajah', '080119', NULL, NULL, NULL, 'ellysa@mial.com', '', 0, NULL, 'jabatan', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-22', 'admin', '::1', '0000-00-00', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `image_management`
+-- Table structure for table `image_management`
 --
 
 CREATE TABLE `image_management` (
@@ -1450,7 +1450,7 @@ CREATE TABLE `image_management` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `int_file_plr`
+-- Table structure for table `int_file_plr`
 --
 
 CREATE TABLE `int_file_plr` (
@@ -1464,7 +1464,7 @@ CREATE TABLE `int_file_plr` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jabatan`
+-- Table structure for table `jabatan`
 --
 
 CREATE TABLE `jabatan` (
@@ -1476,7 +1476,7 @@ CREATE TABLE `jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `jabatan`
+-- Dumping data for table `jabatan`
 --
 
 INSERT INTO `jabatan` (`id_jabatan`, `id_struktur_organisasi`, `kode_jabatan`, `nama_jabatan`, `keterangan`) VALUES
@@ -1486,7 +1486,7 @@ INSERT INTO `jabatan` (`id_jabatan`, `id_struktur_organisasi`, `kode_jabatan`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jurnal`
+-- Table structure for table `jurnal`
 --
 
 CREATE TABLE `jurnal` (
@@ -1503,7 +1503,7 @@ CREATE TABLE `jurnal` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `jurnal_type`
+-- Table structure for table `jurnal_type`
 --
 
 CREATE TABLE `jurnal_type` (
@@ -1512,7 +1512,7 @@ CREATE TABLE `jurnal_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `jurnal_type`
+-- Dumping data for table `jurnal_type`
 --
 
 INSERT INTO `jurnal_type` (`id_jurnal_type`, `type_jurnal`) VALUES
@@ -1522,7 +1522,7 @@ INSERT INTO `jurnal_type` (`id_jurnal_type`, `type_jurnal`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `j_pembelian`
+-- Table structure for table `j_pembelian`
 --
 
 CREATE TABLE `j_pembelian` (
@@ -1539,7 +1539,7 @@ CREATE TABLE `j_pembelian` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kabupaten`
+-- Table structure for table `kabupaten`
 --
 
 CREATE TABLE `kabupaten` (
@@ -1549,7 +1549,7 @@ CREATE TABLE `kabupaten` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kabupaten`
+-- Dumping data for table `kabupaten`
 --
 
 INSERT INTO `kabupaten` (`id_kabupaten`, `id_propinsi`, `nama_kabupaten`) VALUES
@@ -2056,7 +2056,7 @@ INSERT INTO `kabupaten` (`id_kabupaten`, `id_propinsi`, `nama_kabupaten`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kantor`
+-- Table structure for table `kantor`
 --
 
 CREATE TABLE `kantor` (
@@ -2072,18 +2072,17 @@ CREATE TABLE `kantor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `kantor`
+-- Dumping data for table `kantor`
 --
 
 INSERT INTO `kantor` (`id_kantor`, `nama_kantor`, `alamat`, `id_kabupaten`, `id_provinsi`, `id_negara`, `longitude`, `latitude`, `keterangan`) VALUES
 (1, 'Jakarta HQ', 'Jl. Sudirman', 1, 1, 1, '', '', ''),
-(2, 'Cabang Jayapura - Papua', 'Jl. Merdeka 26 Papua Barat', 100, 10, 1, '', '', ''),
-(3, 'CABANG MANOKWARI (PAPUA BARAT)', 'JL. MERDEKA NO.77 MANOKWARI', 77, 34, 8, '', '', 'KANTOR DI PAPUA BARAT');
+(2, 'Cabang Jayapura - Papua', 'Jl. Merdeka 26 Papua Barat', 100, 10, 1, '', '', '');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kantor_cabang`
+-- Table structure for table `kantor_cabang`
 --
 
 CREATE TABLE `kantor_cabang` (
@@ -2099,7 +2098,7 @@ CREATE TABLE `kantor_cabang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `kantor_cabang`
+-- Dumping data for table `kantor_cabang`
 --
 
 INSERT INTO `kantor_cabang` (`id_kantor_cabang`, `nama_kantor`, `alamat`, `id_kabupaten`, `id_provinsi`, `id_negara`, `longitude`, `latitude`, `keterangan`) VALUES
@@ -2109,7 +2108,7 @@ INSERT INTO `kantor_cabang` (`id_kantor_cabang`, `nama_kantor`, `alamat`, `id_ka
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `language`
+-- Table structure for table `language`
 --
 
 CREATE TABLE `language` (
@@ -2119,7 +2118,7 @@ CREATE TABLE `language` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `language`
+-- Dumping data for table `language`
 --
 
 INSERT INTO `language` (`id_language`, `language`, `short`) VALUES
@@ -2129,7 +2128,7 @@ INSERT INTO `language` (`id_language`, `language`, `short`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `material`
+-- Table structure for table `material`
 --
 
 CREATE TABLE `material` (
@@ -2143,7 +2142,7 @@ CREATE TABLE `material` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `material`
+-- Dumping data for table `material`
 --
 
 INSERT INTO `material` (`id_material`, `kode`, `nama`, `deskripsi`, `created_id_user`, `created_date`, `created_ip_address`) VALUES
@@ -2177,7 +2176,7 @@ INSERT INTO `material` (`id_material`, `kode`, `nama`, `deskripsi`, `created_id_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `material_finish`
+-- Table structure for table `material_finish`
 --
 
 CREATE TABLE `material_finish` (
@@ -2213,7 +2212,7 @@ CREATE TABLE `material_finish` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `material_finish`
+-- Dumping data for table `material_finish`
 --
 
 INSERT INTO `material_finish` (`id_material_finish`, `id_material`, `id_material_kategori1`, `id_material_kategori2`, `id_material_kategori3`, `yard`, `kode`, `year`, `no_urut`, `no_urut_kode`, `no_splitting`, `barcode_kode`, `deskripsi`, `is_packing`, `id_basic_packing`, `id_material_in_item_proc`, `id_material_in`, `is_join_packing`, `join_info`, `id_gudang`, `id_gudang_area`, `id_pallet_gudang`, `harga_beli_peryard`, `created_id_user`, `created_date`, `created_ip_address`, `deleted_date`, `deleted_user_id`, `deleted_ip_address`) VALUES
@@ -2262,7 +2261,7 @@ INSERT INTO `material_finish` (`id_material_finish`, `id_material`, `id_material
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `material_finish_delete`
+-- Table structure for table `material_finish_delete`
 --
 
 CREATE TABLE `material_finish_delete` (
@@ -2299,7 +2298,7 @@ CREATE TABLE `material_finish_delete` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `material_finish_drop`
+-- Table structure for table `material_finish_drop`
 --
 
 CREATE TABLE `material_finish_drop` (
@@ -2329,7 +2328,7 @@ CREATE TABLE `material_finish_drop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `material_finish_drop`
+-- Dumping data for table `material_finish_drop`
 --
 
 INSERT INTO `material_finish_drop` (`id_material_finish`, `id_material`, `id_material_kategori1`, `id_material_kategori2`, `id_material_kategori3`, `yard`, `kode`, `year`, `no_urut`, `no_urut_kode`, `no_splitting`, `barcode_kode`, `deskripsi`, `is_packing`, `id_basic_packing`, `id_material_in_item_proc`, `id_material_in`, `is_join_packing`, `join_info`, `id_gudang`, `created_id_user`, `created_date`, `created_ip_address`) VALUES
@@ -2395,7 +2394,7 @@ INSERT INTO `material_finish_drop` (`id_material_finish`, `id_material`, `id_mat
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `material_in`
+-- Table structure for table `material_in`
 --
 
 CREATE TABLE `material_in` (
@@ -2422,7 +2421,7 @@ CREATE TABLE `material_in` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `material_in`
+-- Dumping data for table `material_in`
 --
 
 INSERT INTO `material_in` (`id_material_in`, `id_unit_poduksi`, `id_material`, `id_material_kategori1`, `id_material_kategori2`, `id_material_kategori3`, `varian`, `id_supplier_delivery_order`, `id_supplier`, `nomor_surat_jalan`, `tanggal_surat_jalan`, `tanggal_proses`, `total_yard_awal`, `total_yard_hasil`, `total_buang`, `harga_beli_peryard`, `catatan`, `created_id_user`, `created_date`, `created_ip_address`) VALUES
@@ -2487,7 +2486,7 @@ INSERT INTO `material_in` (`id_material_in`, `id_unit_poduksi`, `id_material`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `material_in_item_proc`
+-- Table structure for table `material_in_item_proc`
 --
 
 CREATE TABLE `material_in_item_proc` (
@@ -2547,7 +2546,7 @@ CREATE TABLE `material_in_item_proc` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `material_in_item_proc`
+-- Dumping data for table `material_in_item_proc`
 --
 
 INSERT INTO `material_in_item_proc` (`id_material_in_item_proc`, `id_material_in`, `yard_awal`, `yard_hasil1`, `yard_hasil2`, `yard_hasil3`, `yard_hasil4`, `yard_hasil5`, `yard_hasil6`, `yard_hasil7`, `yard_hasil8`, `yard_hasil9`, `yard_hasil10`, `yard_hasil_total`, `buang1`, `buang2`, `selisih_lebih`, `selisih_kurang`, `is_packing`, `id_basic_packing`, `id_basic_packing1`, `id_basic_packing2`, `id_basic_packing3`, `id_basic_packing4`, `id_basic_packing5`, `id_basic_packing6`, `id_basic_packing7`, `id_basic_packing8`, `id_basic_packing9`, `id_basic_packing10`, `id_material_finish1`, `id_material_finish2`, `id_material_finish3`, `id_material_finish4`, `id_material_finish5`, `id_material_finish6`, `id_material_finish7`, `id_material_finish8`, `id_material_finish9`, `id_material_finish10`, `label_barcode_number1`, `label_barcode_number2`, `label_barcode_number3`, `label_barcode_number4`, `label_barcode_number5`, `label_barcode_number6`, `label_barcode_number7`, `label_barcode_number8`, `label_barcode_number9`, `label_barcode_number10`, `created_id_user`, `created_date`, `created_ip_address`) VALUES
@@ -2708,7 +2707,7 @@ INSERT INTO `material_in_item_proc` (`id_material_in_item_proc`, `id_material_in
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `material_kategori1`
+-- Table structure for table `material_kategori1`
 --
 
 CREATE TABLE `material_kategori1` (
@@ -2719,7 +2718,7 @@ CREATE TABLE `material_kategori1` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `material_kategori1`
+-- Dumping data for table `material_kategori1`
 --
 
 INSERT INTO `material_kategori1` (`id_material`, `kode`, `nama`, `is_active`) VALUES
@@ -2734,7 +2733,7 @@ INSERT INTO `material_kategori1` (`id_material`, `kode`, `nama`, `is_active`) VA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `material_kategori2`
+-- Table structure for table `material_kategori2`
 --
 
 CREATE TABLE `material_kategori2` (
@@ -2745,7 +2744,7 @@ CREATE TABLE `material_kategori2` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `material_kategori2`
+-- Dumping data for table `material_kategori2`
 --
 
 INSERT INTO `material_kategori2` (`id_material`, `kode`, `nama`, `is_active`) VALUES
@@ -2757,7 +2756,7 @@ INSERT INTO `material_kategori2` (`id_material`, `kode`, `nama`, `is_active`) VA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `material_kategori3`
+-- Table structure for table `material_kategori3`
 --
 
 CREATE TABLE `material_kategori3` (
@@ -2768,7 +2767,7 @@ CREATE TABLE `material_kategori3` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `material_kategori3`
+-- Dumping data for table `material_kategori3`
 --
 
 INSERT INTO `material_kategori3` (`id_material`, `kode`, `nama`, `is_active`) VALUES
@@ -2781,7 +2780,7 @@ INSERT INTO `material_kategori3` (`id_material`, `kode`, `nama`, `is_active`) VA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `material_raw_kategori1`
+-- Table structure for table `material_raw_kategori1`
 --
 
 CREATE TABLE `material_raw_kategori1` (
@@ -2792,7 +2791,7 @@ CREATE TABLE `material_raw_kategori1` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `material_raw_kategori1`
+-- Dumping data for table `material_raw_kategori1`
 --
 
 INSERT INTO `material_raw_kategori1` (`id_material_raw_kategori`, `kode`, `nama`, `is_active`) VALUES
@@ -2805,7 +2804,7 @@ INSERT INTO `material_raw_kategori1` (`id_material_raw_kategori`, `kode`, `nama`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `material_sales`
+-- Table structure for table `material_sales`
 --
 
 CREATE TABLE `material_sales` (
@@ -2842,7 +2841,7 @@ CREATE TABLE `material_sales` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `material_sales`
+-- Dumping data for table `material_sales`
 --
 
 INSERT INTO `material_sales` (`id_material_sales`, `sales_id_sales_order`, `sales_harga_jual`, `sales_id_outlet_penjualan`, `sales_created_id_user`, `sales_created_date`, `sales_created_ip_address`, `id_material_finish`, `id_material`, `id_material_kategori1`, `id_material_kategori2`, `id_material_kategori3`, `yard`, `kode`, `year`, `no_urut`, `no_urut_kode`, `no_splitting`, `barcode_kode`, `deskripsi`, `is_packing`, `id_basic_packing`, `id_material_in_item_proc`, `id_material_in`, `is_join_packing`, `join_info`, `id_gudang`, `created_id_user`, `created_date`, `created_ip_address`) VALUES
@@ -2903,7 +2902,7 @@ INSERT INTO `material_sales` (`id_material_sales`, `sales_id_sales_order`, `sale
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `material_sales_cancel`
+-- Table structure for table `material_sales_cancel`
 --
 
 CREATE TABLE `material_sales_cancel` (
@@ -2942,7 +2941,7 @@ CREATE TABLE `material_sales_cancel` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `material_sampel`
+-- Table structure for table `material_sampel`
 --
 
 CREATE TABLE `material_sampel` (
@@ -2966,7 +2965,7 @@ CREATE TABLE `material_sampel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `material_sampel`
+-- Dumping data for table `material_sampel`
 --
 
 INSERT INTO `material_sampel` (`id_material_sampel`, `id_customer`, `nama_sampel`, `id_material_raw_kategori`, `tanggal_minta_sampel`, `tanggal_keluar_sampel`, `id_subcontractor`, `id_material`, `id_material_kategori1`, `id_material_kategori2`, `id_material_kategori3`, `kode_barcode`, `keterangan`, `status`, `created_id_user`, `created_date`, `created_ip_address`) VALUES
@@ -2981,7 +2980,7 @@ INSERT INTO `material_sampel` (`id_material_sampel`, `id_customer`, `nama_sampel
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `material_support`
+-- Table structure for table `material_support`
 --
 
 CREATE TABLE `material_support` (
@@ -2992,7 +2991,7 @@ CREATE TABLE `material_support` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `material_support`
+-- Dumping data for table `material_support`
 --
 
 INSERT INTO `material_support` (`id_material_support`, `kode`, `nama`, `deskripsi`) VALUES
@@ -3004,7 +3003,7 @@ INSERT INTO `material_support` (`id_material_support`, `kode`, `nama`, `deskrips
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `media_identity`
+-- Table structure for table `media_identity`
 --
 
 CREATE TABLE `media_identity` (
@@ -3015,7 +3014,7 @@ CREATE TABLE `media_identity` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `media_identity`
+-- Dumping data for table `media_identity`
 --
 
 INSERT INTO `media_identity` (`id_media_identity`, `media_name`, `icon`, `url`) VALUES
@@ -3025,7 +3024,7 @@ INSERT INTO `media_identity` (`id_media_identity`, `media_name`, `icon`, `url`) 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `menu_link`
+-- Table structure for table `menu_link`
 --
 
 CREATE TABLE `menu_link` (
@@ -3038,7 +3037,7 @@ CREATE TABLE `menu_link` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `menu_link`
+-- Dumping data for table `menu_link`
 --
 
 INSERT INTO `menu_link` (`id_menu_link`, `menu_name`, `menu_name_lang1`, `menu_name_lang2`, `url`, `is_active`) VALUES
@@ -3050,7 +3049,7 @@ INSERT INTO `menu_link` (`id_menu_link`, `menu_name`, `menu_name_lang1`, `menu_n
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mst_jenjang_pendidikan`
+-- Table structure for table `mst_jenjang_pendidikan`
 --
 
 CREATE TABLE `mst_jenjang_pendidikan` (
@@ -3060,7 +3059,7 @@ CREATE TABLE `mst_jenjang_pendidikan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `mst_jenjang_pendidikan`
+-- Dumping data for table `mst_jenjang_pendidikan`
 --
 
 INSERT INTO `mst_jenjang_pendidikan` (`id_mst_jenjang_pendidikan`, `jenjang_pendidikan`, `keterangan`) VALUES
@@ -3072,7 +3071,7 @@ INSERT INTO `mst_jenjang_pendidikan` (`id_mst_jenjang_pendidikan`, `jenjang_pend
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mutasi_stock`
+-- Table structure for table `mutasi_stock`
 --
 
 CREATE TABLE `mutasi_stock` (
@@ -3089,7 +3088,7 @@ CREATE TABLE `mutasi_stock` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mutasi_stock`
+-- Dumping data for table `mutasi_stock`
 --
 
 INSERT INTO `mutasi_stock` (`id_mutasi_stock`, `tanggal_mutasi`, `id_gudang_asal`, `id_gudang_tujuan`, `id_pemberi_perintah`, `id_pelaksana_perintah`, `nomor_surat`, `nomor_urut`, `keterangan`, `is_approved`) VALUES
@@ -3106,7 +3105,7 @@ INSERT INTO `mutasi_stock` (`id_mutasi_stock`, `tanggal_mutasi`, `id_gudang_asal
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mutasi_stock_item`
+-- Table structure for table `mutasi_stock_item`
 --
 
 CREATE TABLE `mutasi_stock_item` (
@@ -3117,7 +3116,7 @@ CREATE TABLE `mutasi_stock_item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mutasi_stock_item`
+-- Dumping data for table `mutasi_stock_item`
 --
 
 INSERT INTO `mutasi_stock_item` (`id_mutasi_stock_item`, `id_mutasi_stock`, `id_material_finish`, `keterangan`) VALUES
@@ -3139,7 +3138,7 @@ INSERT INTO `mutasi_stock_item` (`id_mutasi_stock_item`, `id_mutasi_stock`, `id_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `news`
+-- Table structure for table `news`
 --
 
 CREATE TABLE `news` (
@@ -3156,7 +3155,7 @@ CREATE TABLE `news` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `news`
+-- Dumping data for table `news`
 --
 
 INSERT INTO `news` (`id_news`, `title_lang1`, `title_lang2`, `content_lang1`, `content_lang2`, `created_id_user`, `created_date`, `created_ip_address`, `file_image`, `is_active`) VALUES
@@ -3169,7 +3168,7 @@ INSERT INTO `news` (`id_news`, `title_lang1`, `title_lang2`, `content_lang1`, `c
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `outlet_penjualan`
+-- Table structure for table `outlet_penjualan`
 --
 
 CREATE TABLE `outlet_penjualan` (
@@ -3185,7 +3184,7 @@ CREATE TABLE `outlet_penjualan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `outlet_penjualan`
+-- Dumping data for table `outlet_penjualan`
 --
 
 INSERT INTO `outlet_penjualan` (`id_outlet_penjualan`, `nama_outlet`, `kode_outlet`, `alamat`, `kota`, `logo`, `longitude`, `latitude`, `keterangan`) VALUES
@@ -3196,7 +3195,7 @@ INSERT INTO `outlet_penjualan` (`id_outlet_penjualan`, `nama_outlet`, `kode_outl
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `outsourcing_process_raw`
+-- Table structure for table `outsourcing_process_raw`
 --
 
 CREATE TABLE `outsourcing_process_raw` (
@@ -3221,7 +3220,7 @@ CREATE TABLE `outsourcing_process_raw` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `outsourcing_process_raw`
+-- Dumping data for table `outsourcing_process_raw`
 --
 
 INSERT INTO `outsourcing_process_raw` (`id_outsourcing_process_raw`, `tanggal_proses`, `id_subcontractor`, `nomor_kontrak`, `nomor_surat_jalan`, `month`, `year`, `total_tagihan`, `bayar_total_bayar`, `bayar_cara`, `bayar_tanggal_bayar`, `bayar_id_bank_pembayaran`, `bayar_bukti`, `status_proses`, `status_pembayaran`, `created_id_user`, `created_date`, `created_ip_address`) VALUES
@@ -3231,7 +3230,7 @@ INSERT INTO `outsourcing_process_raw` (`id_outsourcing_process_raw`, `tanggal_pr
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `outsourcing_process_raw_item`
+-- Table structure for table `outsourcing_process_raw_item`
 --
 
 CREATE TABLE `outsourcing_process_raw_item` (
@@ -3246,7 +3245,7 @@ CREATE TABLE `outsourcing_process_raw_item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `outsourcing_process_raw_item`
+-- Dumping data for table `outsourcing_process_raw_item`
 --
 
 INSERT INTO `outsourcing_process_raw_item` (`id_outsourcing_process_raw_item`, `id_outsourcing_process_raw`, `id_material_raw_kategori`, `yard`, `harga`, `created_id_user`, `created_date`, `created_ip_address`) VALUES
@@ -3255,7 +3254,7 @@ INSERT INTO `outsourcing_process_raw_item` (`id_outsourcing_process_raw_item`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pallet_gudang`
+-- Table structure for table `pallet_gudang`
 --
 
 CREATE TABLE `pallet_gudang` (
@@ -3268,7 +3267,7 @@ CREATE TABLE `pallet_gudang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pallet_gudang`
+-- Dumping data for table `pallet_gudang`
 --
 
 INSERT INTO `pallet_gudang` (`id_pallet_gudang`, `id_gudang`, `nomor_pallet`, `kode`, `pallet_group`, `keterangan`) VALUES
@@ -3278,7 +3277,7 @@ INSERT INTO `pallet_gudang` (`id_pallet_gudang`, `id_gudang`, `nomor_pallet`, `k
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pembelian_material_support`
+-- Table structure for table `pembelian_material_support`
 --
 
 CREATE TABLE `pembelian_material_support` (
@@ -3295,7 +3294,7 @@ CREATE TABLE `pembelian_material_support` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `pembelian_material_support`
+-- Dumping data for table `pembelian_material_support`
 --
 
 INSERT INTO `pembelian_material_support` (`id_pembelian_material_support`, `id_material_support`, `tanggal_pembelian`, `nomor_faktur`, `jumlah`, `harga_satuan`, `keterangan`, `created_date`, `created_id_user`, `created_ip_address`) VALUES
@@ -3305,7 +3304,7 @@ INSERT INTO `pembelian_material_support` (`id_pembelian_material_support`, `id_m
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `picking_list`
+-- Table structure for table `picking_list`
 --
 
 CREATE TABLE `picking_list` (
@@ -3325,7 +3324,7 @@ CREATE TABLE `picking_list` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `picking_list_item`
+-- Table structure for table `picking_list_item`
 --
 
 CREATE TABLE `picking_list_item` (
@@ -3346,7 +3345,7 @@ CREATE TABLE `picking_list_item` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `purchase_raw`
+-- Table structure for table `purchase_raw`
 --
 
 CREATE TABLE `purchase_raw` (
@@ -3371,7 +3370,7 @@ CREATE TABLE `purchase_raw` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `purchase_raw`
+-- Dumping data for table `purchase_raw`
 --
 
 INSERT INTO `purchase_raw` (`id_purchase_raw`, `tanggal_order`, `id_supplier`, `nomor_kontrak`, `nomor_surat_jalan`, `month`, `year`, `total_tagihan`, `bayar_total_bayar`, `bayar_cara`, `bayar_tanggal_bayar`, `bayar_id_bank_pembayaran`, `bayar_bukti`, `status_purchasing`, `status_pembayaran`, `created_id_user`, `created_date`, `created_ip_address`) VALUES
@@ -3382,7 +3381,7 @@ INSERT INTO `purchase_raw` (`id_purchase_raw`, `tanggal_order`, `id_supplier`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `purchase_raw_item`
+-- Table structure for table `purchase_raw_item`
 --
 
 CREATE TABLE `purchase_raw_item` (
@@ -3397,7 +3396,7 @@ CREATE TABLE `purchase_raw_item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `purchase_raw_item`
+-- Dumping data for table `purchase_raw_item`
 --
 
 INSERT INTO `purchase_raw_item` (`id_purchase_raw_item`, `id_purchase_raw`, `id_material_raw_kategori`, `yard`, `harga`, `created_id_user`, `created_date`, `created_ip_address`) VALUES
@@ -3410,7 +3409,7 @@ INSERT INTO `purchase_raw_item` (`id_purchase_raw_item`, `id_purchase_raw`, `id_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `riwayat_jabatan`
+-- Table structure for table `riwayat_jabatan`
 --
 
 CREATE TABLE `riwayat_jabatan` (
@@ -3429,7 +3428,7 @@ CREATE TABLE `riwayat_jabatan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `riwayat_pendidikan`
+-- Table structure for table `riwayat_pendidikan`
 --
 
 CREATE TABLE `riwayat_pendidikan` (
@@ -3445,19 +3444,10 @@ CREATE TABLE `riwayat_pendidikan` (
   `keterangan` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data untuk tabel `riwayat_pendidikan`
---
-
-INSERT INTO `riwayat_pendidikan` (`id_riwayat_pendidikan`, `id_pegawai`, `id_jenjang_pendidikan`, `nama_sekolah`, `id_sekolah`, `tahun_masuk`, `tahun_lulus`, `bidang`, `gpa`, `keterangan`) VALUES
-(1, 12311, 1, 'TELKOM UNIVERSITY', 40257, 2019, 2024, 'S1 SISTEM INFORMASI', 3.00, 'LULUSS'),
-(2, 2, 1, 'TELKOM UNIVERSITY', 40257, 2015, 2019, 'S1 INFORMATIKA', 4.00, 'LULUSS'),
-(3, 3, 1, 'UNIVERSITAS PAPUA', 1, 2017, 2022, 'S1 GEOLOGI', 3.00, 'LULUSS');
-
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `salary_monthly`
+-- Table structure for table `salary_monthly`
 --
 
 CREATE TABLE `salary_monthly` (
@@ -3476,7 +3466,7 @@ CREATE TABLE `salary_monthly` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `salary_monthly`
+-- Dumping data for table `salary_monthly`
 --
 
 INSERT INTO `salary_monthly` (`id_salary_monthly`, `id_pegawai`, `bulan`, `tahun`, `gaji_pokok`, `tunjangan1`, `tunjangan2`, `tunjangan3`, `tunjangan4`, `tunjangan5`, `jml_lembur`, `jml_kehadiran`) VALUES
@@ -3485,7 +3475,7 @@ INSERT INTO `salary_monthly` (`id_salary_monthly`, `id_pegawai`, `bulan`, `tahun
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sales_cashflow`
+-- Table structure for table `sales_cashflow`
 --
 
 CREATE TABLE `sales_cashflow` (
@@ -3504,7 +3494,7 @@ CREATE TABLE `sales_cashflow` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sales_jurnal`
+-- Table structure for table `sales_jurnal`
 --
 
 CREATE TABLE `sales_jurnal` (
@@ -3529,7 +3519,7 @@ CREATE TABLE `sales_jurnal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `sales_jurnal`
+-- Dumping data for table `sales_jurnal`
 --
 
 INSERT INTO `sales_jurnal` (`id_sales_jurnal`, `type`, `id_sales_order`, `id_customer`, `tanggal`, `id_akun_debit`, `debit`, `id_akun_kredit`, `kredit`, `keterangan`, `bayar_cara`, `id_bank_pembayaran`, `bayar_bukti`, `jumlah_bayar`, `id_reference`, `created_date`, `created_user_id`, `created_ip_address`) VALUES
@@ -3582,7 +3572,7 @@ INSERT INTO `sales_jurnal` (`id_sales_jurnal`, `type`, `id_sales_order`, `id_cus
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sales_order`
+-- Table structure for table `sales_order`
 --
 
 CREATE TABLE `sales_order` (
@@ -3611,7 +3601,7 @@ CREATE TABLE `sales_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `sales_order`
+-- Dumping data for table `sales_order`
 --
 
 INSERT INTO `sales_order` (`id_sales_order`, `tanggal_order`, `id_customer`, `id_outlet_penjualan`, `nomor_sales_order`, `nomor`, `month`, `year`, `invoice_total`, `bayar_total_bayar`, `bayar_cara`, `bayar_mode`, `bayar_tanggal_bayar`, `bayar_id_bank_pembayaran`, `bayar_uang_muka`, `bayar_bukti`, `status_order`, `status_invoice`, `status_pembayaran`, `created_id_user`, `created_date`, `created_ip_address`) VALUES
@@ -3648,7 +3638,7 @@ INSERT INTO `sales_order` (`id_sales_order`, `tanggal_order`, `id_customer`, `id
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sales_pembayaran`
+-- Table structure for table `sales_pembayaran`
 --
 
 CREATE TABLE `sales_pembayaran` (
@@ -3667,7 +3657,7 @@ CREATE TABLE `sales_pembayaran` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sales_retur`
+-- Table structure for table `sales_retur`
 --
 
 CREATE TABLE `sales_retur` (
@@ -3681,7 +3671,7 @@ CREATE TABLE `sales_retur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `sales_retur`
+-- Dumping data for table `sales_retur`
 --
 
 INSERT INTO `sales_retur` (`id_sales_retur`, `id_sales_order`, `tanggal_retur`, `alasan_retur`, `id_penerima_barang`, `catatan_kondisi_barang`, `total_tagihan_retur`) VALUES
@@ -3695,7 +3685,7 @@ INSERT INTO `sales_retur` (`id_sales_retur`, `id_sales_order`, `tanggal_retur`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sales_retur_item`
+-- Table structure for table `sales_retur_item`
 --
 
 CREATE TABLE `sales_retur_item` (
@@ -3738,7 +3728,7 @@ CREATE TABLE `sales_retur_item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `sales_retur_item`
+-- Dumping data for table `sales_retur_item`
 --
 
 INSERT INTO `sales_retur_item` (`id_sales_retur_item`, `retur_id_sales_order`, `retur_id_sales_retur`, `retur_id_outlet_penjualan`, `retur_created_id_user`, `retur_created_date`, `retur_created_ip_address`, `sales_id_sales_order`, `sales_harga_jual`, `sales_id_outlet_penjualan`, `sales_created_id_user`, `sales_created_date`, `sales_created_ip_address`, `id_material_finish`, `id_material`, `id_material_kategori1`, `id_material_kategori2`, `id_material_kategori3`, `yard`, `kode`, `year`, `no_urut`, `no_urut_kode`, `no_splitting`, `barcode_kode`, `deskripsi`, `is_packing`, `id_basic_packing`, `id_material_in_item_proc`, `id_material_in`, `is_join_packing`, `join_info`, `id_gudang`, `created_id_user`, `created_date`, `created_ip_address`) VALUES
@@ -3756,7 +3746,7 @@ INSERT INTO `sales_retur_item` (`id_sales_retur_item`, `retur_id_sales_order`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `section_content`
+-- Table structure for table `section_content`
 --
 
 CREATE TABLE `section_content` (
@@ -3766,7 +3756,7 @@ CREATE TABLE `section_content` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `section_content`
+-- Dumping data for table `section_content`
 --
 
 INSERT INTO `section_content` (`id_section_content`, `section_content`, `is_active`) VALUES
@@ -3778,7 +3768,7 @@ INSERT INTO `section_content` (`id_section_content`, `section_content`, `is_acti
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `stock_opname`
+-- Table structure for table `stock_opname`
 --
 
 CREATE TABLE `stock_opname` (
@@ -3792,7 +3782,7 @@ CREATE TABLE `stock_opname` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `stock_opname`
+-- Dumping data for table `stock_opname`
 --
 
 INSERT INTO `stock_opname` (`id_stock_opname`, `tanggal_stock_opname`, `nama_kegiatan`, `keterangan`, `created_date`, `created_user_id`, `created_ip_address`) VALUES
@@ -3801,7 +3791,7 @@ INSERT INTO `stock_opname` (`id_stock_opname`, `tanggal_stock_opname`, `nama_keg
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `stock_opname_item`
+-- Table structure for table `stock_opname_item`
 --
 
 CREATE TABLE `stock_opname_item` (
@@ -3816,7 +3806,7 @@ CREATE TABLE `stock_opname_item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `stock_opname_item`
+-- Dumping data for table `stock_opname_item`
 --
 
 INSERT INTO `stock_opname_item` (`id_stock_opname_item`, `id_stock_opname`, `id_material_finish`, `id_gudang`, `redundat_barcode_code`, `keterangan`, `entry_time`, `created_user_id`) VALUES
@@ -3837,7 +3827,7 @@ INSERT INTO `stock_opname_item` (`id_stock_opname_item`, `id_stock_opname`, `id_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `struktur_material`
+-- Table structure for table `struktur_material`
 --
 
 CREATE TABLE `struktur_material` (
@@ -3852,7 +3842,7 @@ CREATE TABLE `struktur_material` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `struktur_material`
+-- Dumping data for table `struktur_material`
 --
 
 INSERT INTO `struktur_material` (`id_struktur_material`, `id_material`, `id_material_kategori1`, `id_material_kategori2`, `id_material_kategori3`, `created_id_user`, `created_date`, `created_ip_address`) VALUES
@@ -3876,7 +3866,7 @@ INSERT INTO `struktur_material` (`id_struktur_material`, `id_material`, `id_mate
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `struktur_material_item`
+-- Table structure for table `struktur_material_item`
 --
 
 CREATE TABLE `struktur_material_item` (
@@ -3889,7 +3879,7 @@ CREATE TABLE `struktur_material_item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `struktur_material_item`
+-- Dumping data for table `struktur_material_item`
 --
 
 INSERT INTO `struktur_material_item` (`id_struktur_material_item`, `id_struktur_material`, `id_material_raw_kategori`, `created_id_user`, `created_date`, `created_ip_address`) VALUES
@@ -3910,7 +3900,7 @@ INSERT INTO `struktur_material_item` (`id_struktur_material_item`, `id_struktur_
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `subcontractor`
+-- Table structure for table `subcontractor`
 --
 
 CREATE TABLE `subcontractor` (
@@ -3928,7 +3918,7 @@ CREATE TABLE `subcontractor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `subcontractor`
+-- Dumping data for table `subcontractor`
 --
 
 INSERT INTO `subcontractor` (`id_subcontractor`, `nama_subcontractor`, `alamat`, `id_kabupaten`, `nomor_telepon`, `email`, `npwp`, `nama_kontak`, `created_date`, `created_user_id`, `created_ip_address`) VALUES
@@ -3937,7 +3927,7 @@ INSERT INTO `subcontractor` (`id_subcontractor`, `nama_subcontractor`, `alamat`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `supplier`
+-- Table structure for table `supplier`
 --
 
 CREATE TABLE `supplier` (
@@ -3960,7 +3950,7 @@ CREATE TABLE `supplier` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `supplier`
+-- Dumping data for table `supplier`
 --
 
 INSERT INTO `supplier` (`id_supplier`, `name_short`, `name_company`, `address`, `city`, `state`, `zip`, `country`, `email_address`, `phone_number`, `id_type_of_supplier`, `created_date`, `created_time`, `created_ip_address`, `created_id_user`, `id_user`) VALUES
@@ -3971,7 +3961,7 @@ INSERT INTO `supplier` (`id_supplier`, `name_short`, `name_company`, `address`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `supplier_delivery_order`
+-- Table structure for table `supplier_delivery_order`
 --
 
 CREATE TABLE `supplier_delivery_order` (
@@ -3984,7 +3974,7 @@ CREATE TABLE `supplier_delivery_order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `supplier_delivery_order`
+-- Dumping data for table `supplier_delivery_order`
 --
 
 INSERT INTO `supplier_delivery_order` (`id_supplier_delivery_order`, `id_supplier`, `nomor_surat_jalan`, `tanggal_surat_jalan`, `nomor_invoice`, `catatan`) VALUES
@@ -4008,7 +3998,7 @@ INSERT INTO `supplier_delivery_order` (`id_supplier_delivery_order`, `id_supplie
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `supplier_do_item`
+-- Table structure for table `supplier_do_item`
 --
 
 CREATE TABLE `supplier_do_item` (
@@ -4026,7 +4016,7 @@ CREATE TABLE `supplier_do_item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `supplier_do_item`
+-- Dumping data for table `supplier_do_item`
 --
 
 INSERT INTO `supplier_do_item` (`id_supplier_do_item`, `id_supplier_delivery_order`, `id_material`, `varian`, `qty`, `unit_price`, `total_price`, `keterangan`, `created_date`, `created_user_id`, `created_ip_address`) VALUES
@@ -4035,7 +4025,7 @@ INSERT INTO `supplier_do_item` (`id_supplier_do_item`, `id_supplier_delivery_ord
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `supplier_raw`
+-- Table structure for table `supplier_raw`
 --
 
 CREATE TABLE `supplier_raw` (
@@ -4053,7 +4043,7 @@ CREATE TABLE `supplier_raw` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `supplier_raw`
+-- Dumping data for table `supplier_raw`
 --
 
 INSERT INTO `supplier_raw` (`id_supplier_raw`, `nama_supplier`, `alamat`, `id_kabupaten`, `nomor_telepon`, `email`, `npwp`, `nama_kontak`, `created_date`, `created_user_id`, `created_ip_address`) VALUES
@@ -4063,7 +4053,7 @@ INSERT INTO `supplier_raw` (`id_supplier_raw`, `nama_supplier`, `alamat`, `id_ka
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `unit_produksi`
+-- Table structure for table `unit_produksi`
 --
 
 CREATE TABLE `unit_produksi` (
@@ -4079,7 +4069,7 @@ CREATE TABLE `unit_produksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `unit_produksi`
+-- Dumping data for table `unit_produksi`
 --
 
 INSERT INTO `unit_produksi` (`id_unit_produksi`, `nama_unit`, `lokasi`, `foto1`, `desc_fungsi`, `desc_material_in`, `desc_proses`, `desc_material_out`, `jumlah_operator`) VALUES
@@ -4088,7 +4078,7 @@ INSERT INTO `unit_produksi` (`id_unit_produksi`, `nama_unit`, `lokasi`, `foto1`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -4107,27 +4097,17 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `full_name`, `username`, `email`, `password_hash`, `auth_key`, `status`, `password_reset_token`, `user_level`, `role`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin', 'admin@admin.com', '$2y$13$wUP89zDmoJhxVQ55PqilV.K/5e3.K2RSRuhHShtr5zVJzSXZtBFJS', 'GL63CdJxr0wI2BuKh7JNC8rJU7XNUY24', 10, 'asdas', 'admin', 20, 1530780329, 1557132823),
-(2, 'amanda', 'amanda', 'amanda@gmail.com', '$2y$13$HOmDlRno1UuYKruSiCCloeFYl42kgo.Xe/YQkhJ7rT5UqzgVOk8km', '_zeXxi6iVr_xs-FqKaD4Gyc6gk1oQPSi', 10, '-eQBpDCsiG-WVNzoR7Na8Np0nPMLgPpr_1633397521', 'sales', 10, 1633397521, 1633397521),
-(3, 'Amanda', 'suppliertest1', 'sudirmans@gmail.com', '$2y$13$CSMzk9sQ8oRHAnjpmxKq7.pwwX6PdqfR.zo5Wl9kS7Uaazac.43zW', 'HMddwQmHLuiS_Zr4PeXZNFKFTJYmyfAR', 10, 'gXqy7NycH5Llh2TG3gaxo30Ni3J9LCQ5_1633412685', 'sales', 10, 1633412685, 1633412685),
-(4, 'badak', 'badak', 'badak@gmail.com', '$2y$13$dGB1UbrwcjR6ia0HINlkIOqWrVsa5MDl2KqWlvaufYGcWT3bKfYue', 'BU11S0MYHqIajs0crfbLGwa6XLP8V2Tm', 10, '9UFEWmCQdTdbzVKgRuNuGdu4mCNryPcc_1633412961', 'sales', 10, 1633412961, 1633412961),
-(5, 'cicak', 'cicak', 'badak@gmail.com', '$2y$13$0ix5aSza9TaQe/sTZePRVewqWclltHfOhmmLr6nqvdAz1dGOVYitq', 'E2TwV7p0va1Mx7d_hc0p7kixVe6n8DFI', 10, 'Znib2lA4kDw4Kb0H_E_6_h5Ae5pHIq6j_1633413050', 'sales', 10, 1633413050, 1633413050),
-(6, 'dana', 'dana', 'dana@gmail.com', '$2y$13$dpaCW9gZ5VwtiMu6mKaN0.jSEmcVyXeqpCoQ9Hlp/Uw8wQ1OCzuSy', 'x2vAcCIgVx3O2A5CYBrqst_5ZgJvIyjq', 10, 'qlLsauvlCxfCOl9WQf4UTk7NjHxHhG60_1633413126', 'sales', 10, 1633413126, 1633413126),
-(7, 'edane', 'edane', 'edane@gmail.com', '$2y$13$hpUJwJbZDhUwargdlP/gPOfbPPg55EGQ8Bg2KbvPPsA16Ele6puNO', 'sd8Vt6rhcpnB0GIrGCPG5DivJXxeL5VJ', 10, 'gKJllGZg69i-x4Ryf_Y7Rxd7sJd5yCEM_1633413155', 'sales', 10, 1633413155, 1637881922),
-(8, 'fafa', 'fafa', 'fafa@gmail.com', '$2y$13$QePfjZeow1IT/8nfW6XT1upknZy5JaUI2hJqMFeo7kwDDT0NAidvO', 'i2v3u3b7BSh2th53lx6nF33pXu3eLCQs', 10, 'rKIDO7W-6KjAv3pGjGXNtyjujtnSpUyk_1633420082', 'sales', 10, 1633420082, 1633420082),
-(9, 'maria', 'maria', 'maria@gmail.com', '$2y$13$a9gU9aRmYVbAC15gzQG2t.ErV2fIL1sp2a6pFtZ2eTN.fs9BfKYJC', 'KNgle8pr2uCN0yHPzthO5ZkLZWAujtfe', 10, 'KNb7TJdDo0bBp4UyWmZrDpi0UcGHO02b_1633932308', 'sales', 10, 1633932308, 1643874577),
-(10, 'dudung', 'dudung', 'dudung@mail.com', '$2y$13$q2p0JKebK0FaNjoSTO8B6u/Zj3u.ZkrMKhEP7kBuJhYPFQqYimdUq', 'CWPbj5JkcMEJ0-zwhikfigXXW2OVF2Qu', 10, 'znQZmKoTvTMKGrFzUsrPGoaCuSZ_jGbN_1637317971', 'produksi', 10, 1637317971, 1637317971),
-(11, 'mamaria', 'mamari', 'mamari@mail.com', '$2y$13$6/io6nV/mv9PTLNaKJrNhuhtbSTFyVDEk5h54OCtauXbpt0ISjFci', 'IXQ24vtqjr8-0wSyCpnCO-AWSrZDelmK', 10, 'dExfX_HafUKMdZk-XIspJQ1cbXLhELDA_1638343265', 'sales', 10, 1638343265, 1638343265),
-(12, 'Outlet Jakarta', 'jakarta', 'outja@mail.com', '$2y$13$ZMt/apiZ8Q7gIlYoHFedlulorEbT9iVPvwhnBRQZ3FfQCFHgixSL2', 'u3F2t0S5zLwtLaKx8DOKTqxvVct-w2R7', 10, 'O7-VXPcO_1Mixx4dO7hFcy7hOvyHo1de_1639095512', 'sales', 10, 1639095512, 1639095512);
+(0, 'Darryl', 'Darryl', 'darryl@mail.com', '$2y$13$46o2YcoIcFxcUAm3VJozGetPr9fNvX4Yv7SJX1aXkWY7EJEINUHfa', 'WB5IPAdH8f0gKV8GkcfyGnhPD3Pu6OZ-', 10, 'PXMPnd7OMjTmAwaELzkOM1Z8PerKL6y8_1655538648', 'admin', 10, 1655538648, 1655538648),
+(1, 'Admin', 'admin', 'admin@admin.com', '$2y$13$wUP89zDmoJhxVQ55PqilV.K/5e3.K2RSRuhHShtr5zVJzSXZtBFJS', 'GL63CdJxr0wI2BuKh7JNC8rJU7XNUY24', 10, 'asdas', 'admin', 20, 1530780329, 1557132823);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_outlet`
+-- Table structure for table `user_outlet`
 --
 
 CREATE TABLE `user_outlet` (
@@ -4140,7 +4120,7 @@ CREATE TABLE `user_outlet` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user_outlet`
+-- Dumping data for table `user_outlet`
 --
 
 INSERT INTO `user_outlet` (`id_user_outlet`, `id_user`, `id_outlet_penjualan`, `created_date`, `created_user_id`, `created_ip_address`) VALUES
@@ -4153,7 +4133,7 @@ INSERT INTO `user_outlet` (`id_user_outlet`, `id_user`, `id_outlet_penjualan`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_perusahaan`
+-- Table structure for table `user_perusahaan`
 --
 
 CREATE TABLE `user_perusahaan` (
@@ -4166,7 +4146,7 @@ CREATE TABLE `user_perusahaan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user_perusahaan`
+-- Dumping data for table `user_perusahaan`
 --
 
 INSERT INTO `user_perusahaan` (`id_user_perusahaan`, `id_user`, `id_perusahaan`, `created_date`, `created_user`, `created_ip_address`) VALUES
@@ -4179,7 +4159,7 @@ INSERT INTO `user_perusahaan` (`id_user_perusahaan`, `id_user`, `id_perusahaan`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_system`
+-- Table structure for table `user_system`
 --
 
 CREATE TABLE `user_system` (
@@ -4198,7 +4178,7 @@ CREATE TABLE `user_system` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user_system`
+-- Dumping data for table `user_system`
 --
 
 INSERT INTO `user_system` (`id`, `full_name`, `user_systemname`, `email`, `password_hash`, `auth_key`, `status`, `password_reset_token`, `user_system_level`, `role`, `created_at`, `updated_at`) VALUES
@@ -4218,7 +4198,7 @@ INSERT INTO `user_system` (`id`, `full_name`, `user_systemname`, `email`, `passw
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `web_page`
+-- Table structure for table `web_page`
 --
 
 CREATE TABLE `web_page` (
@@ -4234,7 +4214,7 @@ CREATE TABLE `web_page` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `web_page`
+-- Dumping data for table `web_page`
 --
 
 INSERT INTO `web_page` (`id_web_page`, `title`, `with_banner`, `content_lang1`, `content_lang2`, `created_id_user`, `created_date`, `created_ip_address`, `is_active`) VALUES
@@ -4243,7 +4223,7 @@ INSERT INTO `web_page` (`id_web_page`, `title`, `with_banner`, `content_lang1`, 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `web_vocabulary`
+-- Table structure for table `web_vocabulary`
 --
 
 CREATE TABLE `web_vocabulary` (
@@ -4253,7 +4233,7 @@ CREATE TABLE `web_vocabulary` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `web_vocabulary`
+-- Dumping data for table `web_vocabulary`
 --
 
 INSERT INTO `web_vocabulary` (`id_web_vocabulary`, `vocab_lang1`, `vocab_lang2`) VALUES
@@ -4271,27 +4251,27 @@ INSERT INTO `web_vocabulary` (`id_web_vocabulary`, `vocab_lang1`, `vocab_lang2`)
 --
 
 --
--- Indeks untuk tabel `akun`
+-- Indexes for table `akun`
 --
 ALTER TABLE `akun`
   ADD PRIMARY KEY (`id_akun`),
   ADD KEY `id_parent` (`id_parent`);
 
 --
--- Indeks untuk tabel `app_setting`
+-- Indexes for table `app_setting`
 --
 ALTER TABLE `app_setting`
   ADD PRIMARY KEY (`id_app_setting`);
 
 --
--- Indeks untuk tabel `auth_assignment`
+-- Indexes for table `auth_assignment`
 --
 ALTER TABLE `auth_assignment`
   ADD PRIMARY KEY (`item_name`,`user_id`),
   ADD KEY `auth_assignment_user_id_idx` (`user_id`);
 
 --
--- Indeks untuk tabel `auth_item`
+-- Indexes for table `auth_item`
 --
 ALTER TABLE `auth_item`
   ADD PRIMARY KEY (`name`),
@@ -4299,58 +4279,58 @@ ALTER TABLE `auth_item`
   ADD KEY `idx-auth_item-type` (`type`);
 
 --
--- Indeks untuk tabel `auth_item_child`
+-- Indexes for table `auth_item_child`
 --
 ALTER TABLE `auth_item_child`
   ADD PRIMARY KEY (`parent`,`child`),
   ADD KEY `child` (`child`);
 
 --
--- Indeks untuk tabel `auth_rule`
+-- Indexes for table `auth_rule`
 --
 ALTER TABLE `auth_rule`
   ADD PRIMARY KEY (`name`);
 
 --
--- Indeks untuk tabel `bank_pembayaran`
+-- Indexes for table `bank_pembayaran`
 --
 ALTER TABLE `bank_pembayaran`
   ADD PRIMARY KEY (`id_bank_pembayaran`);
 
 --
--- Indeks untuk tabel `base_pendapatan`
+-- Indexes for table `base_pendapatan`
 --
 ALTER TABLE `base_pendapatan`
   ADD PRIMARY KEY (`id_base_pendapatan`);
 
 --
--- Indeks untuk tabel `base_salary`
+-- Indexes for table `base_salary`
 --
 ALTER TABLE `base_salary`
   ADD PRIMARY KEY (`id_base_salary`);
 
 --
--- Indeks untuk tabel `basic_packing`
+-- Indexes for table `basic_packing`
 --
 ALTER TABLE `basic_packing`
   ADD PRIMARY KEY (`id_basic_packing`);
 
 --
--- Indeks untuk tabel `basic_packing_item`
+-- Indexes for table `basic_packing_item`
 --
 ALTER TABLE `basic_packing_item`
   ADD PRIMARY KEY (`id_basic_packing_item`),
   ADD KEY `id_basic_packing` (`id_basic_packing`,`id_material_support`);
 
 --
--- Indeks untuk tabel `contact_us`
+-- Indexes for table `contact_us`
 --
 ALTER TABLE `contact_us`
   ADD PRIMARY KEY (`id_contact_us`),
   ADD KEY `id_office_region` (`id_office_region`);
 
 --
--- Indeks untuk tabel `content`
+-- Indexes for table `content`
 --
 ALTER TABLE `content`
   ADD PRIMARY KEY (`id_content`),
@@ -4359,72 +4339,72 @@ ALTER TABLE `content`
   ADD KEY `id_frontend_topnav` (`id_frontend_topnav`);
 
 --
--- Indeks untuk tabel `cpanel_leftmenu`
+-- Indexes for table `cpanel_leftmenu`
 --
 ALTER TABLE `cpanel_leftmenu`
   ADD PRIMARY KEY (`id_leftmenu`);
 
 --
--- Indeks untuk tabel `customer`
+-- Indexes for table `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`id_customer`),
   ADD KEY `id_kabupaten` (`id_kabupaten`);
 
 --
--- Indeks untuk tabel `customer_kredit`
+-- Indexes for table `customer_kredit`
 --
 ALTER TABLE `customer_kredit`
   ADD PRIMARY KEY (`id_customer_kredit`),
   ADD KEY `id_customer` (`id_customer`,`id_sales_order`,`tanggal`);
 
 --
--- Indeks untuk tabel `customer_kredit_bayar`
+-- Indexes for table `customer_kredit_bayar`
 --
 ALTER TABLE `customer_kredit_bayar`
   ADD PRIMARY KEY (`id_customer_kredit_bayar`),
   ADD KEY `id_customer` (`id_customer`,`tanggal_bayar`,`id_bank_pembayaran`,`id_sales_order`);
 
 --
--- Indeks untuk tabel `cv_pendidikan`
+-- Indexes for table `cv_pendidikan`
 --
 ALTER TABLE `cv_pendidikan`
   ADD PRIMARY KEY (`id_cv_pendidikan`),
   ADD KEY `id_pegawai` (`id_pegawai`,`id_jenjang_pendidikan`,`id_sekolah`);
 
 --
--- Indeks untuk tabel `frontend_topnav`
+-- Indexes for table `frontend_topnav`
 --
 ALTER TABLE `frontend_topnav`
   ADD PRIMARY KEY (`id_frontend_topnav`);
 
 --
--- Indeks untuk tabel `gudang`
+-- Indexes for table `gudang`
 --
 ALTER TABLE `gudang`
   ADD PRIMARY KEY (`id_gudang`),
   ADD KEY `id_outlet_penjualan` (`id_outlet_penjualan`);
 
 --
--- Indeks untuk tabel `home_info`
+-- Indexes for table `home_info`
 --
 ALTER TABLE `home_info`
   ADD PRIMARY KEY (`id_home_info`);
 
 --
--- Indeks untuk tabel `hrm_absensi_pegawai`
+-- Indexes for table `hrm_absensi_pegawai`
 --
 ALTER TABLE `hrm_absensi_pegawai`
   ADD PRIMARY KEY (`id_hrm_absensi_pegawai`);
 
 --
--- Indeks untuk tabel `hrm_mst_jenis_absensi`
+-- Indexes for table `hrm_mst_jenis_absensi`
 --
 ALTER TABLE `hrm_mst_jenis_absensi`
   ADD PRIMARY KEY (`id_mst_jenis_absensi`);
 
 --
--- Indeks untuk tabel `hrm_pegawai`
+-- Indexes for table `hrm_pegawai`
 --
 ALTER TABLE `hrm_pegawai`
   ADD PRIMARY KEY (`id_pegawai`),
@@ -4443,39 +4423,39 @@ ALTER TABLE `hrm_pegawai`
   ADD KEY `pos_id_kk_profil_posisi` (`pos_id_kk_profil_posisi`);
 
 --
--- Indeks untuk tabel `int_file_plr`
+-- Indexes for table `int_file_plr`
 --
 ALTER TABLE `int_file_plr`
   ADD PRIMARY KEY (`id_int_file_plr`);
 
 --
--- Indeks untuk tabel `jabatan`
+-- Indexes for table `jabatan`
 --
 ALTER TABLE `jabatan`
   ADD PRIMARY KEY (`id_jabatan`);
 
 --
--- Indeks untuk tabel `jurnal`
+-- Indexes for table `jurnal`
 --
 ALTER TABLE `jurnal`
   ADD PRIMARY KEY (`id_jurnal`),
   ADD KEY `id_type_jurnal` (`id_type_jurnal`,`id_akun_debit`,`id_akun_kredit`);
 
 --
--- Indeks untuk tabel `jurnal_type`
+-- Indexes for table `jurnal_type`
 --
 ALTER TABLE `jurnal_type`
   ADD PRIMARY KEY (`id_jurnal_type`);
 
 --
--- Indeks untuk tabel `j_pembelian`
+-- Indexes for table `j_pembelian`
 --
 ALTER TABLE `j_pembelian`
   ADD PRIMARY KEY (`id_j_pembelian`),
   ADD KEY `id_material_support` (`id_material_support`,`tanggal_pembelian`,`bulan`,`tahun`);
 
 --
--- Indeks untuk tabel `kabupaten`
+-- Indexes for table `kabupaten`
 --
 ALTER TABLE `kabupaten`
   ADD PRIMARY KEY (`id_kabupaten`),
@@ -4483,31 +4463,31 @@ ALTER TABLE `kabupaten`
   ADD KEY `id_propinsi_2` (`id_propinsi`);
 
 --
--- Indeks untuk tabel `kantor`
+-- Indexes for table `kantor`
 --
 ALTER TABLE `kantor`
   ADD PRIMARY KEY (`id_kantor`);
 
 --
--- Indeks untuk tabel `kantor_cabang`
+-- Indexes for table `kantor_cabang`
 --
 ALTER TABLE `kantor_cabang`
   ADD PRIMARY KEY (`id_kantor_cabang`);
 
 --
--- Indeks untuk tabel `language`
+-- Indexes for table `language`
 --
 ALTER TABLE `language`
   ADD PRIMARY KEY (`id_language`);
 
 --
--- Indeks untuk tabel `material`
+-- Indexes for table `material`
 --
 ALTER TABLE `material`
   ADD PRIMARY KEY (`id_material`);
 
 --
--- Indeks untuk tabel `material_finish`
+-- Indexes for table `material_finish`
 --
 ALTER TABLE `material_finish`
   ADD PRIMARY KEY (`id_material_finish`),
@@ -4520,7 +4500,7 @@ ALTER TABLE `material_finish`
   ADD KEY `no_splitting` (`no_splitting`);
 
 --
--- Indeks untuk tabel `material_finish_delete`
+-- Indexes for table `material_finish_delete`
 --
 ALTER TABLE `material_finish_delete`
   ADD PRIMARY KEY (`id_material_finish_delete`),
@@ -4534,7 +4514,7 @@ ALTER TABLE `material_finish_delete`
   ADD KEY `id_material_finish` (`id_material_finish`) USING BTREE;
 
 --
--- Indeks untuk tabel `material_finish_drop`
+-- Indexes for table `material_finish_drop`
 --
 ALTER TABLE `material_finish_drop`
   ADD PRIMARY KEY (`id_material_finish`),
@@ -4547,7 +4527,7 @@ ALTER TABLE `material_finish_drop`
   ADD KEY `no_splitting` (`no_splitting`);
 
 --
--- Indeks untuk tabel `material_in`
+-- Indexes for table `material_in`
 --
 ALTER TABLE `material_in`
   ADD PRIMARY KEY (`id_material_in`),
@@ -4555,7 +4535,7 @@ ALTER TABLE `material_in`
   ADD KEY `id_unit_poduksi` (`id_unit_poduksi`,`id_material`,`id_material_kategori1`,`id_material_kategori2`,`id_material_kategori3`,`id_supplier_delivery_order`,`id_supplier`);
 
 --
--- Indeks untuk tabel `material_in_item_proc`
+-- Indexes for table `material_in_item_proc`
 --
 ALTER TABLE `material_in_item_proc`
   ADD PRIMARY KEY (`id_material_in_item_proc`),
@@ -4564,31 +4544,31 @@ ALTER TABLE `material_in_item_proc`
   ADD KEY `id_basic_packing1` (`id_basic_packing1`,`id_basic_packing2`,`id_basic_packing3`,`id_basic_packing4`,`id_basic_packing5`,`id_basic_packing6`);
 
 --
--- Indeks untuk tabel `material_kategori1`
+-- Indexes for table `material_kategori1`
 --
 ALTER TABLE `material_kategori1`
   ADD PRIMARY KEY (`id_material`);
 
 --
--- Indeks untuk tabel `material_kategori2`
+-- Indexes for table `material_kategori2`
 --
 ALTER TABLE `material_kategori2`
   ADD PRIMARY KEY (`id_material`);
 
 --
--- Indeks untuk tabel `material_kategori3`
+-- Indexes for table `material_kategori3`
 --
 ALTER TABLE `material_kategori3`
   ADD PRIMARY KEY (`id_material`);
 
 --
--- Indeks untuk tabel `material_raw_kategori1`
+-- Indexes for table `material_raw_kategori1`
 --
 ALTER TABLE `material_raw_kategori1`
   ADD PRIMARY KEY (`id_material_raw_kategori`);
 
 --
--- Indeks untuk tabel `material_sales`
+-- Indexes for table `material_sales`
 --
 ALTER TABLE `material_sales`
   ADD PRIMARY KEY (`id_material_sales`),
@@ -4605,7 +4585,7 @@ ALTER TABLE `material_sales`
   ADD KEY `sales_id_sales_order` (`sales_id_sales_order`);
 
 --
--- Indeks untuk tabel `material_sales_cancel`
+-- Indexes for table `material_sales_cancel`
 --
 ALTER TABLE `material_sales_cancel`
   ADD PRIMARY KEY (`id_material_sales`),
@@ -4622,7 +4602,7 @@ ALTER TABLE `material_sales_cancel`
   ADD KEY `sales_id_sales_order` (`sales_id_sales_order`);
 
 --
--- Indeks untuk tabel `material_sampel`
+-- Indexes for table `material_sampel`
 --
 ALTER TABLE `material_sampel`
   ADD PRIMARY KEY (`id_material_sampel`),
@@ -4630,57 +4610,57 @@ ALTER TABLE `material_sampel`
   ADD KEY `id_customer` (`id_customer`,`id_material_raw_kategori`,`id_subcontractor`,`id_material`,`id_material_kategori1`,`id_material_kategori2`,`id_material_kategori3`);
 
 --
--- Indeks untuk tabel `material_support`
+-- Indexes for table `material_support`
 --
 ALTER TABLE `material_support`
   ADD PRIMARY KEY (`id_material_support`);
 
 --
--- Indeks untuk tabel `media_identity`
+-- Indexes for table `media_identity`
 --
 ALTER TABLE `media_identity`
   ADD PRIMARY KEY (`id_media_identity`);
 
 --
--- Indeks untuk tabel `menu_link`
+-- Indexes for table `menu_link`
 --
 ALTER TABLE `menu_link`
   ADD PRIMARY KEY (`id_menu_link`);
 
 --
--- Indeks untuk tabel `mst_jenjang_pendidikan`
+-- Indexes for table `mst_jenjang_pendidikan`
 --
 ALTER TABLE `mst_jenjang_pendidikan`
   ADD PRIMARY KEY (`id_mst_jenjang_pendidikan`);
 
 --
--- Indeks untuk tabel `mutasi_stock`
+-- Indexes for table `mutasi_stock`
 --
 ALTER TABLE `mutasi_stock`
   ADD PRIMARY KEY (`id_mutasi_stock`),
   ADD KEY `tanggal_mutasi` (`tanggal_mutasi`,`id_gudang_asal`,`id_gudang_tujuan`,`id_pemberi_perintah`,`id_pelaksana_perintah`);
 
 --
--- Indeks untuk tabel `mutasi_stock_item`
+-- Indexes for table `mutasi_stock_item`
 --
 ALTER TABLE `mutasi_stock_item`
   ADD PRIMARY KEY (`id_mutasi_stock_item`),
   ADD KEY `id_mutasi_stock` (`id_mutasi_stock`,`id_material_finish`);
 
 --
--- Indeks untuk tabel `news`
+-- Indexes for table `news`
 --
 ALTER TABLE `news`
   ADD PRIMARY KEY (`id_news`);
 
 --
--- Indeks untuk tabel `outlet_penjualan`
+-- Indexes for table `outlet_penjualan`
 --
 ALTER TABLE `outlet_penjualan`
   ADD PRIMARY KEY (`id_outlet_penjualan`);
 
 --
--- Indeks untuk tabel `outsourcing_process_raw`
+-- Indexes for table `outsourcing_process_raw`
 --
 ALTER TABLE `outsourcing_process_raw`
   ADD PRIMARY KEY (`id_outsourcing_process_raw`),
@@ -4691,14 +4671,14 @@ ALTER TABLE `outsourcing_process_raw`
   ADD KEY `status_invoice` (`status_pembayaran`);
 
 --
--- Indeks untuk tabel `outsourcing_process_raw_item`
+-- Indexes for table `outsourcing_process_raw_item`
 --
 ALTER TABLE `outsourcing_process_raw_item`
   ADD PRIMARY KEY (`id_outsourcing_process_raw_item`),
   ADD KEY `id_customer` (`id_outsourcing_process_raw`);
 
 --
--- Indeks untuk tabel `pallet_gudang`
+-- Indexes for table `pallet_gudang`
 --
 ALTER TABLE `pallet_gudang`
   ADD PRIMARY KEY (`id_pallet_gudang`),
@@ -4706,26 +4686,26 @@ ALTER TABLE `pallet_gudang`
   ADD KEY `nomor_pallet` (`nomor_pallet`);
 
 --
--- Indeks untuk tabel `pembelian_material_support`
+-- Indexes for table `pembelian_material_support`
 --
 ALTER TABLE `pembelian_material_support`
   ADD PRIMARY KEY (`id_pembelian_material_support`);
 
 --
--- Indeks untuk tabel `picking_list`
+-- Indexes for table `picking_list`
 --
 ALTER TABLE `picking_list`
   ADD PRIMARY KEY (`id_picking_list`);
 
 --
--- Indeks untuk tabel `picking_list_item`
+-- Indexes for table `picking_list_item`
 --
 ALTER TABLE `picking_list_item`
   ADD PRIMARY KEY (`id_picking_list_item`),
   ADD KEY `id_picking_list` (`id_picking_list`);
 
 --
--- Indeks untuk tabel `purchase_raw`
+-- Indexes for table `purchase_raw`
 --
 ALTER TABLE `purchase_raw`
   ADD PRIMARY KEY (`id_purchase_raw`),
@@ -4736,41 +4716,41 @@ ALTER TABLE `purchase_raw`
   ADD KEY `status_invoice` (`status_pembayaran`);
 
 --
--- Indeks untuk tabel `purchase_raw_item`
+-- Indexes for table `purchase_raw_item`
 --
 ALTER TABLE `purchase_raw_item`
   ADD PRIMARY KEY (`id_purchase_raw_item`),
   ADD KEY `id_customer` (`id_purchase_raw`);
 
 --
--- Indeks untuk tabel `riwayat_jabatan`
+-- Indexes for table `riwayat_jabatan`
 --
 ALTER TABLE `riwayat_jabatan`
   ADD PRIMARY KEY (`id_riwayat_jabatan`),
   ADD KEY `id_pegawai` (`id_pegawai`,`id_jabatan`,`id_kantor`);
 
 --
--- Indeks untuk tabel `riwayat_pendidikan`
+-- Indexes for table `riwayat_pendidikan`
 --
 ALTER TABLE `riwayat_pendidikan`
   ADD PRIMARY KEY (`id_riwayat_pendidikan`),
   ADD KEY `id_pegawai` (`id_pegawai`,`id_jenjang_pendidikan`,`id_sekolah`);
 
 --
--- Indeks untuk tabel `salary_monthly`
+-- Indexes for table `salary_monthly`
 --
 ALTER TABLE `salary_monthly`
   ADD PRIMARY KEY (`id_salary_monthly`);
 
 --
--- Indeks untuk tabel `sales_cashflow`
+-- Indexes for table `sales_cashflow`
 --
 ALTER TABLE `sales_cashflow`
   ADD PRIMARY KEY (`id_sales_cashflow`),
   ADD KEY `id_sales_order` (`id_sales_order`,`id_customer`,`tanggal_transaksi`,`id_bank_pembayaran`);
 
 --
--- Indeks untuk tabel `sales_jurnal`
+-- Indexes for table `sales_jurnal`
 --
 ALTER TABLE `sales_jurnal`
   ADD PRIMARY KEY (`id_sales_jurnal`),
@@ -4778,7 +4758,7 @@ ALTER TABLE `sales_jurnal`
   ADD KEY `id_sales_order` (`id_sales_order`,`id_customer`);
 
 --
--- Indeks untuk tabel `sales_order`
+-- Indexes for table `sales_order`
 --
 ALTER TABLE `sales_order`
   ADD PRIMARY KEY (`id_sales_order`),
@@ -4790,21 +4770,21 @@ ALTER TABLE `sales_order`
   ADD KEY `status_invoice` (`status_invoice`,`status_pembayaran`);
 
 --
--- Indeks untuk tabel `sales_pembayaran`
+-- Indexes for table `sales_pembayaran`
 --
 ALTER TABLE `sales_pembayaran`
   ADD PRIMARY KEY (`id_sales_pembayaran`),
   ADD KEY `id_sales_order` (`id_sales_order`,`id_customer`,`tanggal_bayar`,`id_bank_pembayaran`);
 
 --
--- Indeks untuk tabel `sales_retur`
+-- Indexes for table `sales_retur`
 --
 ALTER TABLE `sales_retur`
   ADD PRIMARY KEY (`id_sales_retur`),
   ADD KEY `id_sales_order` (`id_sales_order`,`tanggal_retur`,`id_penerima_barang`);
 
 --
--- Indeks untuk tabel `sales_retur_item`
+-- Indexes for table `sales_retur_item`
 --
 ALTER TABLE `sales_retur_item`
   ADD PRIMARY KEY (`id_sales_retur_item`),
@@ -4822,26 +4802,26 @@ ALTER TABLE `sales_retur_item`
   ADD KEY `retur_id_sales_retur` (`retur_id_sales_retur`);
 
 --
--- Indeks untuk tabel `section_content`
+-- Indexes for table `section_content`
 --
 ALTER TABLE `section_content`
   ADD PRIMARY KEY (`id_section_content`);
 
 --
--- Indeks untuk tabel `stock_opname`
+-- Indexes for table `stock_opname`
 --
 ALTER TABLE `stock_opname`
   ADD PRIMARY KEY (`id_stock_opname`);
 
 --
--- Indeks untuk tabel `stock_opname_item`
+-- Indexes for table `stock_opname_item`
 --
 ALTER TABLE `stock_opname_item`
   ADD PRIMARY KEY (`id_stock_opname_item`),
   ADD KEY `id_stock_opname` (`id_stock_opname`,`id_material_finish`);
 
 --
--- Indeks untuk tabel `struktur_material`
+-- Indexes for table `struktur_material`
 --
 ALTER TABLE `struktur_material`
   ADD PRIMARY KEY (`id_struktur_material`),
@@ -4849,7 +4829,7 @@ ALTER TABLE `struktur_material`
   ADD KEY `id_material_2` (`id_material`,`id_material_kategori1`,`id_material_kategori2`,`id_material_kategori3`);
 
 --
--- Indeks untuk tabel `struktur_material_item`
+-- Indexes for table `struktur_material_item`
 --
 ALTER TABLE `struktur_material_item`
   ADD PRIMARY KEY (`id_struktur_material_item`),
@@ -4857,20 +4837,20 @@ ALTER TABLE `struktur_material_item`
   ADD KEY `id_struktur_material` (`id_struktur_material`,`id_material_raw_kategori`);
 
 --
--- Indeks untuk tabel `subcontractor`
+-- Indexes for table `subcontractor`
 --
 ALTER TABLE `subcontractor`
   ADD PRIMARY KEY (`id_subcontractor`),
   ADD KEY `id_kabupaten` (`id_kabupaten`);
 
 --
--- Indeks untuk tabel `supplier`
+-- Indexes for table `supplier`
 --
 ALTER TABLE `supplier`
   ADD PRIMARY KEY (`id_supplier`);
 
 --
--- Indeks untuk tabel `supplier_delivery_order`
+-- Indexes for table `supplier_delivery_order`
 --
 ALTER TABLE `supplier_delivery_order`
   ADD PRIMARY KEY (`id_supplier_delivery_order`),
@@ -4878,27 +4858,27 @@ ALTER TABLE `supplier_delivery_order`
   ADD KEY `id_supplier` (`id_supplier`);
 
 --
--- Indeks untuk tabel `supplier_do_item`
+-- Indexes for table `supplier_do_item`
 --
 ALTER TABLE `supplier_do_item`
   ADD PRIMARY KEY (`id_supplier_do_item`),
   ADD KEY `id_supplier_delivery_order` (`id_supplier_delivery_order`,`id_material`);
 
 --
--- Indeks untuk tabel `supplier_raw`
+-- Indexes for table `supplier_raw`
 --
 ALTER TABLE `supplier_raw`
   ADD PRIMARY KEY (`id_supplier_raw`),
   ADD KEY `id_kabupaten` (`id_kabupaten`);
 
 --
--- Indeks untuk tabel `unit_produksi`
+-- Indexes for table `unit_produksi`
 --
 ALTER TABLE `unit_produksi`
   ADD PRIMARY KEY (`id_unit_produksi`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
@@ -4907,19 +4887,19 @@ ALTER TABLE `user`
   ADD KEY `password_reset_token` (`password_reset_token`);
 
 --
--- Indeks untuk tabel `user_outlet`
+-- Indexes for table `user_outlet`
 --
 ALTER TABLE `user_outlet`
   ADD PRIMARY KEY (`id_user_outlet`);
 
 --
--- Indeks untuk tabel `user_perusahaan`
+-- Indexes for table `user_perusahaan`
 --
 ALTER TABLE `user_perusahaan`
   ADD PRIMARY KEY (`id_user_perusahaan`);
 
 --
--- Indeks untuk tabel `user_system`
+-- Indexes for table `user_system`
 --
 ALTER TABLE `user_system`
   ADD PRIMARY KEY (`id`),
@@ -4928,92 +4908,92 @@ ALTER TABLE `user_system`
   ADD KEY `password_reset_token` (`password_reset_token`);
 
 --
--- Indeks untuk tabel `web_page`
+-- Indexes for table `web_page`
 --
 ALTER TABLE `web_page`
   ADD PRIMARY KEY (`id_web_page`);
 
 --
--- Indeks untuk tabel `web_vocabulary`
+-- Indexes for table `web_vocabulary`
 --
 ALTER TABLE `web_vocabulary`
   ADD PRIMARY KEY (`id_web_vocabulary`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `akun`
+-- AUTO_INCREMENT for table `akun`
 --
 ALTER TABLE `akun`
   MODIFY `id_akun` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6017;
 
 --
--- AUTO_INCREMENT untuk tabel `app_setting`
+-- AUTO_INCREMENT for table `app_setting`
 --
 ALTER TABLE `app_setting`
   MODIFY `id_app_setting` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
 
 --
--- AUTO_INCREMENT untuk tabel `cv_pendidikan`
+-- AUTO_INCREMENT for table `cv_pendidikan`
 --
 ALTER TABLE `cv_pendidikan`
   MODIFY `id_cv_pendidikan` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `hrm_absensi_pegawai`
+-- AUTO_INCREMENT for table `hrm_absensi_pegawai`
 --
 ALTER TABLE `hrm_absensi_pegawai`
   MODIFY `id_hrm_absensi_pegawai` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `hrm_mst_jenis_absensi`
+-- AUTO_INCREMENT for table `hrm_mst_jenis_absensi`
 --
 ALTER TABLE `hrm_mst_jenis_absensi`
   MODIFY `id_mst_jenis_absensi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT untuk tabel `hrm_pegawai`
+-- AUTO_INCREMENT for table `hrm_pegawai`
 --
 ALTER TABLE `hrm_pegawai`
   MODIFY `id_pegawai` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `jabatan`
+-- AUTO_INCREMENT for table `jabatan`
 --
 ALTER TABLE `jabatan`
   MODIFY `id_jabatan` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `kantor`
+-- AUTO_INCREMENT for table `kantor`
 --
 ALTER TABLE `kantor`
-  MODIFY `id_kantor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kantor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `kantor_cabang`
+-- AUTO_INCREMENT for table `kantor_cabang`
 --
 ALTER TABLE `kantor_cabang`
   MODIFY `id_kantor_cabang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `mst_jenjang_pendidikan`
+-- AUTO_INCREMENT for table `mst_jenjang_pendidikan`
 --
 ALTER TABLE `mst_jenjang_pendidikan`
   MODIFY `id_mst_jenjang_pendidikan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT untuk tabel `riwayat_jabatan`
+-- AUTO_INCREMENT for table `riwayat_jabatan`
 --
 ALTER TABLE `riwayat_jabatan`
   MODIFY `id_riwayat_jabatan` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `riwayat_pendidikan`
+-- AUTO_INCREMENT for table `riwayat_pendidikan`
 --
 ALTER TABLE `riwayat_pendidikan`
-  MODIFY `id_riwayat_pendidikan` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_riwayat_pendidikan` bigint(20) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
