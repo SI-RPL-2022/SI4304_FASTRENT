@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
      <div class="box-body kantor-view">
 
           <p>
-               <?= Html::a('Back', ['back', 'id' => $model->id_kantor], ['class' => 'btn btn-secondary']) ?>
+               <?= Html::a('<< Back', ['index'], ['class' => 'btn btn-warning']) ?>
                <?= Html::a('Update', ['update', 'id' => $model->id_kantor], ['class' => 'btn btn-primary']) ?>
                <?= Html::a('Delete', ['delete', 'id' => $model->id_kantor], [
                 'class' => 'btn btn-danger',

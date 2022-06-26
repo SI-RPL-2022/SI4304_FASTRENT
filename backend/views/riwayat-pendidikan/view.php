@@ -13,20 +13,21 @@ $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="box">
-    <div class="box-body riwayat-pendidikan-view">
+     <div class="box-body riwayat-pendidikan-view">
 
-                <p>
-            <?= Html::a('Update', ['update', 'id' => $model->id_riwayat_pendidikan], ['class' => 'btn btn-primary']) ?>
-            <?= Html::a('Delete', ['delete', 'id' => $model->id_riwayat_pendidikan], [
+          <p>
+               <?= Html::a('<< Back', ['index'], ['class' => 'btn btn-warning']) ?>
+               <?= Html::a('Update', ['update', 'id' => $model->id_riwayat_pendidikan], ['class' => 'btn btn-primary']) ?>
+               <?= Html::a('Delete', ['delete', 'id' => $model->id_riwayat_pendidikan], [
                 'class' => 'btn btn-danger',
                 'data' => [
                     'confirm' => 'Are you sure you want to delete this item?',
                     'method' => 'post',
                 ],
             ]) ?>
-        </p>
+          </p>
 
-        <?= DetailView::widget([
+          <?= DetailView::widget([
             'model' => $model,
             'attributes' => [
                 'nama_sekolah',
@@ -38,5 +39,5 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ]) ?>
 
-    </div>
+     </div>
 </div>

@@ -11,12 +11,12 @@ $this->params['breadcrumbs'][] = ['label' => 'Detail', 'url' => ['view', 'id' =>
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="box">
-	<div class="box-body riwayat-pendidikan-update">
+     <div class="box-body riwayat-pendidikan-update">
 
-		
-	    <?= $this->render('_form', [
+
+          <?= $this->render('_form', [
 	        'model' => $model,
 	    ]) ?>
 
-	</div>
+     </div>
 </div>

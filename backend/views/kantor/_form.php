@@ -29,6 +29,7 @@ use yii\widgets\ActiveForm;
      <?= $form->field($model, 'keterangan')->textInput(['maxlength' => true]) ?>
 
      <div class="form-group">
+          <?= Html::a('<< Back', ['index'], ['class' => 'btn btn-warning']) ?>
           <?= Html::submitButton('Simpan', ['class' => 'btn btn-success']) ?>
      </div>
 
