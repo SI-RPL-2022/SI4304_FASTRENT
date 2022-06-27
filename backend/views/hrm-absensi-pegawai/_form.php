@@ -10,20 +10,20 @@ use dosamigos\datetimepicker\DateTimePicker;
 ?>
 
 <style>
-    div.required label.control-label:after {
-        content: ' *';
-        color: red;
-    }
+div.required label.control-label:after {
+     content: ' *';
+     color: red;
+}
 </style>
 
 <style>
-    .form-group {
-        margin-bottom: 0px;
-    }
+.form-group {
+     margin-bottom: 0px;
+}
 </style>
 
 <div class="hrm-absensi-pegawai-form box-primary">
-    <?php $form = ActiveForm::begin([
+     <?php $form = ActiveForm::begin([
             'layout' => 'horizontal',
             'class' => 'form-horizontal',
             'fieldConfig' => [
@@ -37,24 +37,24 @@ use dosamigos\datetimepicker\DateTimePicker;
                 ],
             ],
         ]); ?>
-    <div class="box-body table-responsive">
-        <div class="col-md-11">
-            <?php
+     <div class="box-body table-responsive">
+          <div class="col-md-11">
+               <?php
             $listPegawai = \yii\helpers\ArrayHelper::map(\backend\models\HrmPegawai::find()->asArray()->all(), 'id_pegawai', 'nama_lengkap');
             ?>
 
-            <?php
+               <?php
             $listJenisAbsensi = \yii\helpers\ArrayHelper::map(\backend\models\HrmMstJenisAbsensi::find()->asArray()->all(), 'id_mst_jenis_absensi', 'jenis_absensi');
             ?>
-            
-            <?= $form->field($model, 'id_pegawai')->dropDownList(
+
+               <?= $form->field($model, 'id_pegawai')->dropDownList(
                 $listPegawai,
                 ['prompt' => 'Pilih Pegawai ...']
             ); ?>
 
-            <?php //= $form->field($model, 'tanggal_absen')->textInput() ?>
+               <?php //= $form->field($model, 'tanggal_absen')->textInput() ?>
 
-            <?php
+               <?php
             echo $form->field($model, 'tanggal_absen')->widget(\dosamigos\datepicker\datepicker::className(),[
                                     'model' => $model,
                                     'attribute' => 'date',
@@ -68,16 +68,16 @@ use dosamigos\datetimepicker\DateTimePicker;
                                 ]);
             ?>
 
-            <?php // $form->field($model, 'id_mst_jenis_absensi')->textInput() ?>
+               <?php // $form->field($model, 'id_mst_jenis_absensi')->textInput() ?>
 
-            <?= $form->field($model, 'id_mst_jenis_absensi')->dropDownList(
+               <?= $form->field($model, 'id_mst_jenis_absensi')->dropDownList(
                 $listJenisAbsensi,
                 ['prompt' => 'Pilih Jenis Absen ...']
             ); ?>
 
-            <?php // $form->field($model, 'waktu_login')->textInput() ?>
+               <?php // $form->field($model, 'waktu_login')->textInput() ?>
 
-            <?php
+               <?php
             echo $form->field($model, 'waktu_login')->widget(\dosamigos\datetimepicker\DateTimePicker::className(), [
                 
             
@@ -97,9 +97,9 @@ use dosamigos\datetimepicker\DateTimePicker;
             ]
             ]);?>
 
-                
 
-            <?= $form->field($model, 'waktu_logout')->widget(\dosamigos\datetimepicker\DateTimePicker::className(), [
+
+               <?= $form->field($model, 'waktu_logout')->widget(\dosamigos\datetimepicker\DateTimePicker::className(), [
                 'language' => 'eng',
                 //'size' => 'ms',
                 'template' => '{input}',
@@ -115,13 +115,14 @@ use dosamigos\datetimepicker\DateTimePicker;
                 'todayBtn' => true
             ]
             ]); ?>
-        </div>
-    </div>
+          </div>
+     </div>
 
-    <div class="box-footer">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success btn-flat']) ?>
-    </div>
+     <div class="box-footer">
+          <?= Html::a('<< Back', ['index'], ['class' => 'btn btn-warning']) ?>
+          <?= Html::submitButton('Save', ['class' => 'btn btn-success btn-flat']) ?>
+     </div>
 
-    <?php ActiveForm::end(); ?>
+     <?php ActiveForm::end(); ?>
 
 </div>

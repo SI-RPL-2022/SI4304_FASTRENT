@@ -10,24 +10,24 @@ use yii\bootstrap\ActiveForm;
 ?>
 
 <style>
-    div.required label.control-label:after {
-        content: " *";
-        color: red;
-    }
+div.required label.control-label:after {
+     content: " *";
+     color: red;
+}
 </style>
 
 <?php
 //CSS Ini digunakan untuk overide jarak antar form biar tidak terlalu jauh
 ?>
 <style>
-    .form-group {
-        margin-bottom: 0px;
-    }
+.form-group {
+     margin-bottom: 0px;
+}
 </style>
 
 <div class="hrm-mst-jenis-absensi-form">
 
-    <?php $form = ActiveForm::begin([
+     <?php $form = ActiveForm::begin([
         'layout' => 'horizontal',
         'options' => ['encrypt' => 'multipart/form-data'], //Tambahkan ini untuk fitur upload
         'fieldConfig' => [
@@ -39,16 +39,17 @@ use yii\bootstrap\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'jenis_absensi')->textInput(['maxlength' => true]) ?>
+     <?= $form->field($model, 'jenis_absensi')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'is_aktif')->textInput() ?>
+     <?= $form->field($model, 'is_aktif')->textInput() ?>
 
- 	<div class="box-footer clearfix">
-        <div class="form-group">
-            <?= Html::submitButton('Simpan', ['class' => 'btn btn-success']) ?>
-        </div>
-    </div>
+     <div class="box-footer clearfix">
+          <div class="form-group">
+               <?= Html::a('<< Back', ['index'], ['class' => 'btn btn-warning']) ?>
+               <?= Html::submitButton('Simpan', ['class' => 'btn btn-success']) ?>
+          </div>
+     </div>
 
-    <?php ActiveForm::end(); ?>
+     <?php ActiveForm::end(); ?>
 
 </div>
