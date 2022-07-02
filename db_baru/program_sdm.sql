@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Jun 2022 pada 02.35
+-- Waktu pembuatan: 02 Jul 2022 pada 10.32
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 8.0.11
 
@@ -348,6 +348,11 @@ INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `cr
 ('/perusahaan/index', 2, NULL, NULL, NULL, 1552641592, 1552641592),
 ('/perusahaan/update', 2, NULL, NULL, NULL, 1552641592, 1552641592),
 ('/perusahaan/view', 2, NULL, NULL, NULL, 1552641592, 1552641592),
+('/preferensi-pegawai/create', 2, NULL, NULL, NULL, 1656740263, 1656740263),
+('/preferensi-pegawai/delete', 2, NULL, NULL, NULL, 1656740263, 1656740263),
+('/preferensi-pegawai/index', 2, NULL, NULL, NULL, 1656740263, 1656740263),
+('/preferensi-pegawai/update', 2, NULL, NULL, NULL, 1656740263, 1656740263),
+('/preferensi-pegawai/view', 2, NULL, NULL, NULL, 1656740263, 1656740263),
 ('/product/*', 2, NULL, NULL, NULL, 1566440072, 1566440072),
 ('/product/create', 2, NULL, NULL, NULL, 1566440072, 1566440072),
 ('/product/delete', 2, NULL, NULL, NULL, 1566440072, 1566440072),
@@ -661,6 +666,11 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('admin', '/perusahaan/index'),
 ('admin', '/perusahaan/update'),
 ('admin', '/perusahaan/view'),
+('admin', '/preferensi-pegawai/create'),
+('admin', '/preferensi-pegawai/delete'),
+('admin', '/preferensi-pegawai/index'),
+('admin', '/preferensi-pegawai/update'),
+('admin', '/preferensi-pegawai/view'),
 ('admin', '/product/*'),
 ('admin', '/product/create'),
 ('admin', '/product/delete'),
@@ -1039,22 +1049,26 @@ CREATE TABLE `cpanel_leftmenu` (
 --
 
 INSERT INTO `cpanel_leftmenu` (`id_leftmenu`, `id_parent_leftmenu`, `has_child`, `menu_name`, `menu_icon`, `value_indo`, `value_eng`, `url`, `is_public`, `auth`, `mobile_display`, `visible`) VALUES
+(1, 14000, 1, 'Cpanel-Menu', 'cogs', 'Cpanel-Menu', 'Cpanel-Menu', 'cpanel-leftmenu/', 1, 'admin', 'MOBILE_TOP', 1),
 (811, 0, 0, 'Kantor', 'link', 'Kantor', 'Kantor', '#', 1, 'admin', 'MOBILE_TOP', 1),
 (812, 811, 0, 'Data Kantor', 'Cube', 'Data Kantor', 'Data Kantor', 'kantor/', 0, 'admin', 'MOBILE_TOP', 1),
+(813, 3000, 0, 'Jenjang Pendidikan', 'handshake', 'Jenjang Pendidikan', 'Jenjang Pendidikan', 'mst-jenjang-pendidikan/', 1, 'admin', 'MOBILE_TOP', 1),
 (2100, 0, 1, 'Pegawai', 'handshake', 'Pegawai', 'Pegawai', '#', 0, 'admin, hrd', 'MOBILE_TOP', 1),
 (2101, 2100, 0, 'Pegawai', 'arrow-circle-right', 'List Pegawai', 'Pegawai', 'hrm-pegawai/index', 0, 'admin, hrd', 'MOBILE_TOP', 1),
-(2102, 2100, 0, 'History Pendidikan', 'cube', 'History Pendidikan', 'History Pendidikan', 'riwayat-pendidikan/', 1, 'admin, hrd', 'MOBILE_TOP', 1),
-(2103, 2100, 0, 'HIstory Jabatan', 'handshake', 'HIstory Jabatan', 'HIstory Jabatan', 'riwayat-jabatan/', 1, 'admin,user', 'MOBILE_TOP', 1),
+(2102, 2100, 1, 'Preferensi-Pegawai', 'handshake', 'Preferensi Pegawai', 'Preferensi Pegawai', 'preferensi-pegawai/', 1, 'admin', 'MOBILE_TOP', 1),
 (2300, 0, 1, 'Absensi', 'link', 'Absensi', 'Absensi', '#', 0, 'admin, hrd', '', 1),
 (2301, 2300, 0, 'Absensi', 'list-alt', 'Absensi', 'Absensi', 'hrm-absensi-pegawai/index', 0, 'admin, hrd', 'MOBILE_TOP', 1),
 (2302, 2300, 0, 'Cuti', 'cube', 'Cuti', 'Cuti', 'hrm-pegawai/index', 0, 'admin, hrd', 'MOBILE_TOP', 1),
 (3000, 0, 1, 'Data Master', 'link', 'Data Master', 'Data Master', '#', 0, 'admin', 'MOBILE_TOP', 1),
 (3001, 3000, 0, 'Jenis Absensi', 'cube', 'Jenis Absensi', 'Jenis Absensi', 'hrm-mst-jenis-absensi/index', 0, 'admin', 'MOBILE_TOP', 1),
+(3002, 3000, 0, 'History Pendidikan', 'cube', 'History Pendidikan', 'History Pendidikan', 'riwayat-pendidikan/', 1, 'admin, hrd', 'MOBILE_TOP', 1),
+(3004, 3000, 0, 'HIstory Jabatan', 'handshake', 'HIstory Jabatan', 'HIstory Jabatan', 'riwayat-jabatan/', 1, 'admin,user', 'MOBILE_TOP', 1),
 (14000, 0, 1, 'Setting', 'cogs', 'Setting', 'Setting', '#', 0, 'admin', '', 1),
 (14001, 14000, 0, 'Setting', 'cog', 'Setting', 'Setting', 'app-setting/index', 0, 'admin', 'MOBILE_TOP', 1),
 (14002, 14000, 0, 'Home Display', 'file-alt', 'Home Display', 'Home Display', 'home-info/index', 0, 'admin', 'MOBILE_TOP', 0),
 (15000, 0, 1, 'User Management', 'users', 'User Management', 'User Management', '#', 0, 'admin', '', 1),
 (15001, 15000, 0, 'User', 'user', 'User', 'User', 'user/index', 0, 'admin', 'MOBILE_TOP', 1),
+(300005, 14000, 0, 'Yii', 'cogs', 'Yii', 'Yii', 'gii/', 0, 'admin', 'MOBILE_TOP', 1),
 (1100000, 0, 0, 'Logout ', 'sign-out', 'Logout ', 'Logout ', 'site/logout', 0, 'admin, member', '', 0);
 
 -- --------------------------------------------------------
@@ -1425,12 +1439,12 @@ CREATE TABLE `hrm_pegawai` (
 --
 
 INSERT INTO `hrm_pegawai` (`id_pegawai`, `id_perusahaan`, `userid`, `id_user`, `cid`, `no_dossier`, `NIP`, `nama_lengkap`, `foto`, `tempat_lahir`, `tanggal_lahir`, `usia`, `usia_lebih_bulan`, `jenis_kelamin`, `golongan_darah`, `tinggi_badan`, `berat_badan`, `agama`, `status_pernikahan`, `no_identitas_pribadi`, `NPWP`, `no_kartu_kesehatan`, `no_kartu_tenagakerja`, `kartu_kesehatan`, `no_kartu_keluarga`, `scan_ktp`, `scan_bpjs`, `scan_npwp`, `scan_paraf`, `scan_kk`, `scan_tandatangan`, `id_hrm_status_pegawai`, `id_hrm_status_organik`, `status_tenaga_kerja`, `reg_tanggal_masuk`, `reg_tanggal_diangkat`, `reg_tanggal_training`, `reg_status_pegawai`, `tanggal_mpp`, `tanggal_pensiun`, `tanggal_terminasi`, `id_hrm_mst_jenis_terminasi_bi`, `gelar_akademik`, `gelar_profesi`, `pdk_id_tingkatpendidikan`, `pdk_sekolah_terakhir`, `pdk_jurusan_terakhir`, `pdk_ipk_terakhir`, `pdk_tahun_lulus`, `alamat_termutakhir`, `alamat_sesuai_identitas`, `mobilephone1`, `mobilephone2`, `telepon_rumah`, `fax_rumah`, `email1`, `email2`, `id_kk_profil_posisi`, `jbt_id_jabatan`, `jbt_jabatan`, `jbt_id_tingkat_jabatan`, `jbt_no_sk_jabatan`, `jbt_tgl_keputusan`, `jbt_tanggal_berlaku`, `jbt_keterangan_mutasi`, `pkt_id_pangkat`, `pkt_no_sk`, `pkt_tgl_keputusan`, `pkt_tgl_berlaku`, `pkt_gaji_pokok`, `pkt_id_jenis_kenaikan_pangkat`, `pkt_eselon`, `pkt_ruang`, `pos_id_hrm_kantor`, `pos_id_hrm_unit_kerja`, `pos_kantor`, `pos_id_kk_profil_posisi`, `sta_total_hukuman_disiplin`, `sta_total_penghargaan`, `pst_masabakti_20`, `pst_masabakti_25`, `pst_masabakti_30`, `pst_masabakti_35`, `pst_masabakti_40`, `cuti_besar_terakhir_start`, `cuti_besar_terakhir_end`, `cuti_besar_terakhir_ke`, `cuti_besar_plan_1`, `cuti_besar_plan_2`, `cuti_besar_plan_3`, `cuti_besar_plan_4`, `cuti_besar_plan_5`, `cuti_besar_plan_6`, `cuti_besar_plan_7`, `cuti_besar_ambil_1`, `cuti_besar_ambil_2`, `cuti_besar_ambil_3`, `cuti_besar_ambil_4`, `cuti_besar_ambil_5`, `cuti_besar_ambil_6`, `cuti_besar_ambil_7`, `cuti_besar_aktual_1`, `cuti_besar_aktual_2`, `cuti_besar_aktual_3`, `cuti_besar_aktual_4`, `cuti_besar_aktual_5`, `cuti_besar_aktual_6`, `cuti_besar_aktual_7`, `cuti_besar_aktual_end_1`, `cuti_besar_aktual_end_2`, `cuti_besar_aktual_end_3`, `cuti_besar_aktual_end_4`, `cuti_besar_aktual_end_5`, `cuti_besar_aktual_end_6`, `cuti_besar_aktual_end_7`, `reff_id`, `created_date`, `created_user`, `created_ip_address`, `modified_date`, `modified_user`, `modified_ip_address`) VALUES
-(1, 201501, '', 0, 145286948, 0, '12311', 'BRYAN RONALD TALISMAN', NULL, '', '2001-11-08', 0, 0, 'PRIA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'JL. MERDEKA NO.77 MANOKWARI', '082299790811', NULL, NULL, NULL, 'bryanronaldtalisman@mail.com', '', 0, NULL, 'TENGA LAPANGAN', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-22', 'admin', '::1', '0000-00-00', '', ''),
-(3, 0, '196505091993092002', 0, 154698399, 0, '7789', 'DEA GINA SIHOTANG', NULL, 'Soppeng', '2001-01-03', 54, 6, 'WANITA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', '1965-05-09', '1965-05-09', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'JL. PERMATA BUAHBATU', '08123456789', NULL, NULL, NULL, 'deagina@gmail.com', '', 0, NULL, 'MANAGER', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'III', 'IV /B', NULL, NULL, 'BADAN KESATUAN BANGSA DAN POLITIK', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '', '', '2019-11-12', '196505091993092002', '192.168.30.25'),
-(4, 201501, '', 0, 30930530, 0, '9999', 'DARRYL BASTIAN', NULL, '', '1998-12-02', 0, 0, 'PRIA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. GARUDA NO.47 BANDUNG', '085156703707', NULL, NULL, NULL, 'darrylbastian@gmail.com', '', 0, NULL, 'MANAGER KEPALA GUDANG', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-08-18', 'admin', '::1', '0000-00-00', '', ''),
-(5, 201501, '', 0, 123767543, 0, '89111', 'AGRIVA DETTA GINTING', NULL, '', '2021-08-30', 0, 0, 'WANITA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Jakarta 28 Jakrta Urta', '87291231', NULL, NULL, NULL, 'agrivadetta@gmail.com', '', 0, NULL, 'Kepala Cabang', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-09-04', 'admin', '::1', '0000-00-00', '', ''),
-(6, 201501, '', 0, 72566225, 0, '1810', 'SHINTA VALENINA', NULL, '', '1982-09-01', 0, 0, 'WANITA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Gajah Mungkur 28', '08192131', NULL, NULL, NULL, 'shintavalenina@gmail.com', '', 0, NULL, 'Kepala Cabang Sungkur', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-09-04', 'admin', '::1', '0000-00-00', '', ''),
-(7, 201501, '', 0, 126484571, 0, '7812', 'MICHAEL CHRISTENSEN BONAR', NULL, '', '2022-04-21', 0, 0, 'PRIA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'JL. KOPO', '082119680625', NULL, NULL, NULL, 'michaelchristensen@mial.com', '', 0, NULL, 'TENGA LAPANGAN 2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-22', 'admin', '::1', '0000-00-00', '', '');
+(1, 201501, '', 0, 145286948, 0, '1202190247', 'BRYAN RONALD TALISMAN', NULL, '', '2001-11-08', 0, 0, 'PRIA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'JL. MERDEKA NO.77 MANOKWARI', '082299790811', NULL, NULL, NULL, 'bryanronaldtalisman@mail.com', '', 0, NULL, 'TENGA LAPANGAN', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-22', 'admin', '::1', '0000-00-00', '', ''),
+(3, 0, '196505091993092002', 0, 154698399, 0, '1202194365', 'DEA GINA SIHOTANG', NULL, 'Soppeng', '2001-01-03', 54, 6, 'WANITA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', '1965-05-09', '1965-05-09', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'JL. PERMATA BUAHBATU', '08123456789', NULL, NULL, NULL, 'deagina@gmail.com', '', 0, NULL, 'MANAGER', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'III', 'IV /B', NULL, NULL, 'BADAN KESATUAN BANGSA DAN POLITIK', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '', '', '2019-11-12', '196505091993092002', '192.168.30.25'),
+(4, 201501, '', 0, 30930530, 0, '1202183344', 'DARRYL BASTIAN', NULL, '', '1998-12-02', 0, 0, 'PRIA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. GARUDA NO.47 BANDUNG', '085156703707', NULL, NULL, NULL, 'darrylbastian@gmail.com', '', 0, NULL, 'MANAGER KEPALA GUDANG', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-08-18', 'admin', '::1', '0000-00-00', '', ''),
+(5, 201501, '', 0, 123767543, 0, '1202184189', 'AGRIVA DETTA GINTING', NULL, '', '2021-08-30', 0, 0, 'WANITA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Jakarta 28 Jakrta Urta', '87291231', NULL, NULL, NULL, 'agrivadetta@gmail.com', '', 0, NULL, 'Kepala Cabang', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-09-04', 'admin', '::1', '0000-00-00', '', ''),
+(6, 201501, '', 0, 72566225, 0, '1202184060', 'SHINTA VALENINA', NULL, '', '1982-09-01', 0, 0, 'WANITA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Jl. Gajah Mungkur 28', '08192131', NULL, NULL, NULL, 'shintavalenina@gmail.com', '', 0, NULL, 'Kepala Cabang Sungkur', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2021-09-04', 'admin', '::1', '0000-00-00', '', ''),
+(7, 201501, '', 0, 126484571, 0, '1202194130', 'MICHAEL CHRISTENSEN BONAR', NULL, '', '2022-04-21', 0, 0, 'PRIA', '-', NULL, NULL, '-', '-', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, 0, 0, 'WNI', NULL, NULL, '0000-00-00', 'AKTIF', NULL, NULL, '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'JL. KOPO', '082119680625', NULL, NULL, NULL, 'michaelchristensen@mial.com', '', 0, NULL, 'TENGA LAPANGAN 2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', NULL, NULL, '', NULL, 0, 0, NULL, NULL, NULL, NULL, NULL, '0000-00-00', '0000-00-00', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-04-22', 'admin', '::1', '0000-00-00', '', '');
 
 -- --------------------------------------------------------
 
@@ -3347,6 +3361,28 @@ CREATE TABLE `picking_list_item` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `preferensi_pegawai`
+--
+
+CREATE TABLE `preferensi_pegawai` (
+  `id_pegawai` int(20) NOT NULL,
+  `Nama` varchar(255) NOT NULL,
+  `jenis_kelamin` varchar(255) NOT NULL,
+  `umur` int(5) NOT NULL,
+  `jabatan` varchar(255) NOT NULL,
+  `penilaian_kinerja` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `preferensi_pegawai`
+--
+
+INSERT INTO `preferensi_pegawai` (`id_pegawai`, `Nama`, `jenis_kelamin`, `umur`, `jabatan`, `penilaian_kinerja`) VALUES
+(1202190247, 'BRYAN RONALD TALISMAN', 'Laki-Laki', 20, 'Tenaga Lapangan 1', '100');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `purchase_raw`
 --
 
@@ -3426,6 +3462,18 @@ CREATE TABLE `riwayat_jabatan` (
   `nomor_sk` varchar(250) DEFAULT NULL,
   `bukti_sk` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `riwayat_jabatan`
+--
+
+INSERT INTO `riwayat_jabatan` (`id_riwayat_jabatan`, `id_pegawai`, `id_jabatan`, `id_kantor`, `tanggal_mulai`, `tahun_mulai`, `tanggal_berakhir`, `tahun_berakhir`, `nomor_sk`, `bukti_sk`) VALUES
+(1, 1202190247, 1, 1, '0000-00-00', 2021, '0000-00-00', 2022, '065545477651', ''),
+(2, 1202194365, 1, 1, '0000-00-00', 2019, '0000-00-00', 2022, '566584779510', ''),
+(3, 1202183344, 1, 1, '0000-00-00', 2021, '0000-00-00', 2022, '898945618', ''),
+(4, 1202184189, 1, 1, '0000-00-00', 2021, '0000-00-00', 2022, '6548911321', ''),
+(5, 1202184060, 1, 1, '0000-00-00', 2021, '0000-00-00', 2022, '315881543125', ''),
+(6, 1202194130, 1, 1, '0000-00-00', 2021, '0000-00-00', 2022, '665487521214', '');
 
 -- --------------------------------------------------------
 
@@ -4716,6 +4764,12 @@ ALTER TABLE `picking_list_item`
   ADD KEY `id_picking_list` (`id_picking_list`);
 
 --
+-- Indeks untuk tabel `preferensi_pegawai`
+--
+ALTER TABLE `preferensi_pegawai`
+  ADD PRIMARY KEY (`id_pegawai`);
+
+--
 -- Indeks untuk tabel `purchase_raw`
 --
 ALTER TABLE `purchase_raw`
@@ -4998,7 +5052,7 @@ ALTER TABLE `mst_jenjang_pendidikan`
 -- AUTO_INCREMENT untuk tabel `riwayat_jabatan`
 --
 ALTER TABLE `riwayat_jabatan`
-  MODIFY `id_riwayat_jabatan` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_riwayat_jabatan` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT untuk tabel `riwayat_pendidikan`

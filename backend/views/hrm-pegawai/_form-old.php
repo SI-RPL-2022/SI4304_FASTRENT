@@ -16,8 +16,8 @@ use dosamigos\datepicker\DatePicker;
 
 <style>
 div.required label.control-label:after {
-    content: " *";
-    color: red;
+     content: " *";
+     color: red;
 }
 </style>
 
@@ -26,11 +26,11 @@ div.required label.control-label:after {
 ?>
 <style>
 .form-group {
-    margin-bottom: 0px;
+     margin-bottom: 0px;
 }
 </style>
 <div class="hrm-pegawai-form box box-primary">
-  <?php $form = ActiveForm::begin([
+     <?php $form = ActiveForm::begin([
     'layout' => 'horizontal',
     'class' => 'form-horizontal',
     'fieldConfig' => [
@@ -44,20 +44,20 @@ div.required label.control-label:after {
         ],
     ],
 ]); ?>
-<div class="box-body table-responsive">
+     <div class="box-body table-responsive">
 
 
-    <?= $form->field($model, 'NIP')->textInput(['maxlength' => true]) ?>
+          <?= $form->field($model, 'NIP')->textInput(['maxlength' => true]) ?>
 
-    <?php // $form->field($model, 'userid')->textInput(['maxlength' => true]) ?>
+          <?php // $form->field($model, 'userid')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'nama_lengkap')->textInput(['maxlength' => true]) ?>
+          <?= $form->field($model, 'nama_lengkap')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'jenis_kelamin')->dropDownList(
+          <?= $form->field($model, 'jenis_kelamin')->dropDownList(
         ['PRIA' => 'PRIA', 'WANITA' => 'WANITA'],['prompt'=>'--PIlih--']
     ) ?>
 
-    <?php
+          <?php
     echo $form->field($model, 'tanggal_lahir')->widget(datepicker::className(),[
                             'model' => $model,
                             'attribute' => 'date',
@@ -71,7 +71,7 @@ div.required label.control-label:after {
                         ]);
     ?>
 
-        <?php /* echo '<label>Tanggal Lahir</label>';
+          <?php /* echo '<label>Tanggal Lahir</label>';
         echo DatePicker::widget([
             'name' => 'tanggal_lahir', 
             'value' => date('d-M-Y', strtotime('+2 days')),
@@ -83,17 +83,18 @@ div.required label.control-label:after {
         ]);
         */ ?>
 
-        <?= $form->field($model, 'alamat_sesuai_identitas')->textarea(['rows' => 3]) ?>
+          <?= $form->field($model, 'alamat_sesuai_identitas')->textarea(['rows' => 3]) ?>
 
-        <?= $form->field($model, 'mobilephone1')->textInput(['maxlength' => true]) ?>
+          <?= $form->field($model, 'mobilephone1')->textInput(['maxlength' => true]) ?>
 
-        <?= $form->field($model, 'email1')->textInput(['maxlength' => true]) ?>
+          <?= $form->field($model, 'email1')->textInput(['maxlength' => true]) ?>
 
-        <?= $form->field($model, 'jbt_jabatan')->textInput(['maxlength' => true]) ?>
+          <?= $form->field($model, 'jbt_jabatan')->textInput(['maxlength' => true]) ?>
 
-    </div>
-    <div class="box-footer">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success btn-flat']) ?>
-    </div>
-    <?php ActiveForm::end(); ?>
+     </div>
+     <div class="box-footer">
+          <?= Html::a('<< Back', ['index'], ['class' => 'btn btn-warning']) ?>
+          <?= Html::submitButton('Save', ['class' => 'btn btn-success btn-flat']) ?>
+     </div>
+     <?php ActiveForm::end(); ?>
 </div>

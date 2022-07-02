@@ -11,24 +11,24 @@ $this->title = 'Riwayat Jabatan';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="box">
-    <div class="box-body riwayat-jabatan-index">
+     <div class="box-body riwayat-jabatan-index">
 
-        
-        <p>
-            <?= Html::a('Tambah Riwayat Jabatan', ['create'], ['class' => 'btn btn-success']) ?>
-        </p>
 
-                <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-    
-            <?= GridView::widget([
+          <p>
+               <?= Html::a('Tambah Riwayat Jabatan', ['create'], ['class' => 'btn btn-success']) ?>
+          </p>
+
+          <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
+          <?= GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
         'columns' => [
                 ['class' => 'yii\grid\SerialColumn'],
-
-                'tanggal_mulai',
+                'id_pegawai',
+                #'tanggal_mulai',
             'tahun_mulai',
-            'tanggal_berakhir',
+            #'tanggal_berakhir',
             'tahun_berakhir',
             'nomor_sk',
             //'bukti_sk',
@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ['class' => 'yii\grid\ActionColumn'],
             ],
         ]); ?>
-    
-    
-    </div>
+
+
+     </div>
 </div>

@@ -11,18 +11,19 @@ $this->params['breadcrumbs'][] = ['label' => 'Cpanel Leftmenus', 'url' => ['inde
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cpanel-leftmenu-view box box-primary">
-    <div class="box-header">
-        <?= Html::a('Update', ['update', 'id' => $model->id_leftmenu], ['class' => 'btn btn-primary btn-flat']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id_leftmenu], [
+     <div class="box-header">
+          <?= Html::a('<< Back', ['index'], ['class' => 'btn btn-warning']) ?>
+          <?= Html::a('Update', ['update', 'id' => $model->id_leftmenu], ['class' => 'btn btn-primary btn-flat']) ?>
+          <?= Html::a('Delete', ['delete', 'id' => $model->id_leftmenu], [
             'class' => 'btn btn-danger btn-flat',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
                 'method' => 'post',
             ],
         ]) ?>
-    </div>
-    <div class="box-body table-responsive no-padding">
-        <?= DetailView::widget([
+     </div>
+     <div class="box-body table-responsive no-padding">
+          <?= DetailView::widget([
             'model' => $model,
             'attributes' => [
                 'id_leftmenu',
@@ -39,5 +40,5 @@ $this->params['breadcrumbs'][] = $this->title;
                 'visible',
             ],
         ]) ?>
-    </div>
+     </div>
 </div>
