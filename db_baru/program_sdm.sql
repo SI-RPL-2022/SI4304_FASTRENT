@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 02 Jul 2022 pada 10.32
+-- Waktu pembuatan: 05 Jul 2022 pada 09.07
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 8.0.11
 
@@ -260,6 +260,12 @@ INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `cr
 ('/image-management/index', 2, NULL, NULL, NULL, 1566440062, 1566440062),
 ('/image-management/update', 2, NULL, NULL, NULL, 1566440062, 1566440062),
 ('/image-management/view', 2, NULL, NULL, NULL, 1566440062, 1566440062),
+('/informasi-kantor/*', 2, NULL, NULL, NULL, 1657003370, 1657003370),
+('/informasi-kantor/create', 2, NULL, NULL, NULL, 1657003370, 1657003370),
+('/informasi-kantor/delete', 2, NULL, NULL, NULL, 1657003370, 1657003370),
+('/informasi-kantor/index', 2, NULL, NULL, NULL, 1657003370, 1657003370),
+('/informasi-kantor/update', 2, NULL, NULL, NULL, 1657003370, 1657003370),
+('/informasi-kantor/view', 2, NULL, NULL, NULL, 1657003370, 1657003370),
 ('/jpembelian/*', 2, NULL, NULL, NULL, 1625442088, 1625442088),
 ('/jurnal-type/*', 2, NULL, NULL, NULL, 1629223445, 1629223445),
 ('/jurnal/*', 2, NULL, NULL, NULL, 1629223445, 1629223445),
@@ -269,6 +275,12 @@ INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `cr
 ('/kantor/index', 2, NULL, NULL, NULL, 1655465566, 1655465566),
 ('/kantor/update', 2, NULL, NULL, NULL, 1655465566, 1655465566),
 ('/kantor/view', 2, NULL, NULL, NULL, 1655465566, 1655465566),
+('/kompetensi-jabatan/*', 2, NULL, NULL, NULL, 1657002574, 1657002574),
+('/kompetensi-jabatan/create', 2, NULL, NULL, NULL, 1657002574, 1657002574),
+('/kompetensi-jabatan/delete', 2, NULL, NULL, NULL, 1657002574, 1657002574),
+('/kompetensi-jabatan/index', 2, NULL, NULL, NULL, 1657002574, 1657002574),
+('/kompetensi-jabatan/update', 2, NULL, NULL, NULL, 1657002574, 1657002574),
+('/kompetensi-jabatan/view', 2, NULL, NULL, NULL, 1657002574, 1657002574),
 ('/language/*', 2, NULL, NULL, NULL, 1566440066, 1566440066),
 ('/language/create', 2, NULL, NULL, NULL, 1566440066, 1566440066),
 ('/language/delete', 2, NULL, NULL, NULL, 1566440066, 1566440066),
@@ -473,7 +485,7 @@ INSERT INTO `auth_item` (`name`, `type`, `description`, `rule_name`, `data`, `cr
 ('/web-vocabulary/index', 2, NULL, NULL, NULL, 1568270281, 1568270281),
 ('/web-vocabulary/update', 2, NULL, NULL, NULL, 1568270282, 1568270282),
 ('/web-vocabulary/view', 2, NULL, NULL, NULL, 1568270282, 1568270282),
-('admin', 1, 'Application Admin', NULL, NULL, 1542013792, 1565583564),
+('admin', 1, 'Application Admin', NULL, NULL, 1542013792, 1657003374),
 ('cpanel-leftmenu/create', 2, 'Create a menu', NULL, NULL, 1547712959, 1547712959),
 ('cpanel-leftmenu/delete', 2, 'delete a menu', NULL, NULL, 1547712959, 1547712959),
 ('cpanel-leftmenu/index', 2, 'Create a index', NULL, NULL, 1547712959, 1547712959),
@@ -595,6 +607,12 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('admin', '/image-management/index'),
 ('admin', '/image-management/update'),
 ('admin', '/image-management/view'),
+('admin', '/informasi-kantor/*'),
+('admin', '/informasi-kantor/create'),
+('admin', '/informasi-kantor/delete'),
+('admin', '/informasi-kantor/index'),
+('admin', '/informasi-kantor/update'),
+('admin', '/informasi-kantor/view'),
 ('admin', '/jpembelian/*'),
 ('admin', '/jurnal-type/*'),
 ('admin', '/jurnal/*'),
@@ -604,6 +622,12 @@ INSERT INTO `auth_item_child` (`parent`, `child`) VALUES
 ('admin', '/kantor/index'),
 ('admin', '/kantor/update'),
 ('admin', '/kantor/view'),
+('admin', '/kompetensi-jabatan/*'),
+('admin', '/kompetensi-jabatan/create'),
+('admin', '/kompetensi-jabatan/delete'),
+('admin', '/kompetensi-jabatan/index'),
+('admin', '/kompetensi-jabatan/update'),
+('admin', '/kompetensi-jabatan/view'),
 ('admin', '/language/*'),
 ('admin', '/language/create'),
 ('admin', '/language/delete'),
@@ -1053,9 +1077,11 @@ INSERT INTO `cpanel_leftmenu` (`id_leftmenu`, `id_parent_leftmenu`, `has_child`,
 (811, 0, 0, 'Kantor', 'link', 'Kantor', 'Kantor', '#', 1, 'admin', 'MOBILE_TOP', 1),
 (812, 811, 0, 'Data Kantor', 'Cube', 'Data Kantor', 'Data Kantor', 'kantor/', 0, 'admin', 'MOBILE_TOP', 1),
 (813, 3000, 0, 'Jenjang Pendidikan', 'handshake', 'Jenjang Pendidikan', 'Jenjang Pendidikan', 'mst-jenjang-pendidikan/', 1, 'admin', 'MOBILE_TOP', 1),
+(814, 811, 1, 'Informasi Kantor', 'home', 'Informasi Kantor', 'Informasi Kantor', 'informasi-kantor/', 1, 'admin', 'MOBILE_TOP', 1),
 (2100, 0, 1, 'Pegawai', 'handshake', 'Pegawai', 'Pegawai', '#', 0, 'admin, hrd', 'MOBILE_TOP', 1),
 (2101, 2100, 0, 'Pegawai', 'arrow-circle-right', 'List Pegawai', 'Pegawai', 'hrm-pegawai/index', 0, 'admin, hrd', 'MOBILE_TOP', 1),
 (2102, 2100, 1, 'Preferensi-Pegawai', 'handshake', 'Preferensi Pegawai', 'Preferensi Pegawai', 'preferensi-pegawai/', 1, 'admin', 'MOBILE_TOP', 1),
+(2103, 2100, 1, 'Kompetensi Jabatan', 'handshake', 'Kompetensi Jabatan', 'Kompetensi Jabatan', 'kompetensi-jabatan/', 1, 'admin', 'MOBILE_TOP', 1),
 (2300, 0, 1, 'Absensi', 'link', 'Absensi', 'Absensi', '#', 0, 'admin, hrd', '', 1),
 (2301, 2300, 0, 'Absensi', 'list-alt', 'Absensi', 'Absensi', 'hrm-absensi-pegawai/index', 0, 'admin, hrd', 'MOBILE_TOP', 1),
 (2302, 2300, 0, 'Cuti', 'cube', 'Cuti', 'Cuti', 'hrm-pegawai/index', 0, 'admin, hrd', 'MOBILE_TOP', 1),
@@ -1461,6 +1487,27 @@ CREATE TABLE `image_management` (
   `updated_user` int(11) DEFAULT NULL,
   `updated_ip_address` varchar(64) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `informasi_kantor`
+--
+
+CREATE TABLE `informasi_kantor` (
+  `id_kantor` varchar(255) NOT NULL,
+  `nama_kantor` varchar(255) NOT NULL,
+  `lokasi` varchar(255) NOT NULL,
+  `jumlah_karyawan` int(11) NOT NULL,
+  `deskripsi` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `informasi_kantor`
+--
+
+INSERT INTO `informasi_kantor` (`id_kantor`, `nama_kantor`, `lokasi`, `jumlah_karyawan`, `deskripsi`) VALUES
+('MKW1', 'CV. KARYADITHA', 'Jl. Yosudarso no 1 Manokwari', 50, 'Perusahaan Ini Bergerak di bidang Konstruksi');
 
 -- --------------------------------------------------------
 
@@ -2120,6 +2167,19 @@ CREATE TABLE `kantor_cabang` (
 INSERT INTO `kantor_cabang` (`id_kantor_cabang`, `nama_kantor`, `alamat`, `id_kabupaten`, `id_provinsi`, `id_negara`, `longitude`, `latitude`, `keterangan`) VALUES
 (1, 'Jakarta HQ', 'Jl. Sudirman', 1, 1, 1, NULL, NULL, NULL),
 (2, 'Cabang Jayapura - Papua', 'Jl. Merdeka 26 Papua Barat', 100, 10, 1, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kompetensi_jabatan`
+--
+
+CREATE TABLE `kompetensi_jabatan` (
+  `id_jabatan` int(11) NOT NULL,
+  `jabatan` int(11) NOT NULL,
+  `jenjang_jabatan` int(11) NOT NULL,
+  `id_karyawan` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -4482,6 +4542,12 @@ ALTER TABLE `hrm_pegawai`
   ADD KEY `pos_id_kk_profil_posisi` (`pos_id_kk_profil_posisi`);
 
 --
+-- Indeks untuk tabel `informasi_kantor`
+--
+ALTER TABLE `informasi_kantor`
+  ADD PRIMARY KEY (`id_kantor`);
+
+--
 -- Indeks untuk tabel `int_file_plr`
 --
 ALTER TABLE `int_file_plr`
@@ -4532,6 +4598,13 @@ ALTER TABLE `kantor`
 --
 ALTER TABLE `kantor_cabang`
   ADD PRIMARY KEY (`id_kantor_cabang`);
+
+--
+-- Indeks untuk tabel `kompetensi_jabatan`
+--
+ALTER TABLE `kompetensi_jabatan`
+  ADD PRIMARY KEY (`id_jabatan`),
+  ADD UNIQUE KEY `id_karyawan` (`id_karyawan`);
 
 --
 -- Indeks untuk tabel `language`
