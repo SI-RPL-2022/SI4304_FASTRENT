@@ -17,7 +17,8 @@ class KompetensiJabatanSearch extends KompetensiJabatan
     public function rules()
     {
         return [
-            [['id_jabatan', 'jabatan', 'jenjang_jabatan', 'id_karyawan'], 'integer'],
+            [['id_jabatan', 'jabatan', 'jenjang_jabatan'], 'safe'],
+            [['id_pegawai'], 'integer'],
         ];
     }
 
@@ -57,11 +58,12 @@ class KompetensiJabatanSearch extends KompetensiJabatan
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id_jabatan' => $this->id_jabatan,
-            'jabatan' => $this->jabatan,
-            'jenjang_jabatan' => $this->jenjang_jabatan,
-            'id_karyawan' => $this->id_karyawan,
+            'id_pegawai' => $this->id_pegawai,
         ]);
+
+        $query->andFilterWhere(['like', 'id_jabatan', $this->id_jabatan])
+            ->andFilterWhere(['like', 'jabatan', $this->jabatan])
+            ->andFilterWhere(['like', 'jenjang_jabatan', $this->jenjang_jabatan]);
 
         return $dataProvider;
     }

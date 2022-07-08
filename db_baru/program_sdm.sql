@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 05 Jul 2022 pada 09.07
+-- Waktu pembuatan: 08 Jul 2022 pada 06.36
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 8.0.11
 
@@ -2175,11 +2175,18 @@ INSERT INTO `kantor_cabang` (`id_kantor_cabang`, `nama_kantor`, `alamat`, `id_ka
 --
 
 CREATE TABLE `kompetensi_jabatan` (
-  `id_jabatan` int(11) NOT NULL,
-  `jabatan` int(11) NOT NULL,
-  `jenjang_jabatan` int(11) NOT NULL,
-  `id_karyawan` int(11) NOT NULL
+  `id_jabatan` varchar(11) NOT NULL,
+  `jabatan` varchar(255) NOT NULL,
+  `jenjang_jabatan` varchar(255) NOT NULL,
+  `id_pegawai` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `kompetensi_jabatan`
+--
+
+INSERT INTO `kompetensi_jabatan` (`id_jabatan`, `jabatan`, `jenjang_jabatan`, `id_pegawai`) VALUES
+('TL1', 'Tenaga Lapangan 1', 'Ahli Lapangan', 1202190247);
 
 -- --------------------------------------------------------
 
@@ -4604,7 +4611,8 @@ ALTER TABLE `kantor_cabang`
 --
 ALTER TABLE `kompetensi_jabatan`
   ADD PRIMARY KEY (`id_jabatan`),
-  ADD UNIQUE KEY `id_karyawan` (`id_karyawan`);
+  ADD UNIQUE KEY `id_karyawan` (`id_pegawai`),
+  ADD UNIQUE KEY `id_pegawai` (`id_pegawai`);
 
 --
 -- Indeks untuk tabel `language`

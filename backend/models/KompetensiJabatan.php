@@ -7,10 +7,10 @@ use Yii;
 /**
  * This is the model class for table "kompetensi_jabatan".
  *
- * @property int $id_jabatan
- * @property int $jabatan
- * @property int $jenjang_jabatan
- * @property int $id_karyawan
+ * @property string $id_jabatan
+ * @property string $jabatan
+ * @property string $jenjang_jabatan
+ * @property int $id_pegawai
  */
 class KompetensiJabatan extends \yii\db\ActiveRecord
 {
@@ -28,8 +28,12 @@ class KompetensiJabatan extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_jabatan', 'jabatan', 'jenjang_jabatan', 'id_karyawan'], 'required'],
-            [['id_jabatan', 'jabatan', 'jenjang_jabatan', 'id_karyawan'], 'integer'],
+            [['id_jabatan', 'jabatan', 'jenjang_jabatan', 'id_pegawai'], 'required'],
+            [['id_pegawai'], 'integer'],
+            [['id_jabatan'], 'string', 'max' => 11],
+            [['jabatan', 'jenjang_jabatan'], 'string', 'max' => 255],
+            [['id_pegawai'], 'unique'],
+            [['id_jabatan'], 'unique'],
         ];
     }
 
@@ -42,7 +46,7 @@ class KompetensiJabatan extends \yii\db\ActiveRecord
             'id_jabatan' => 'Id Jabatan',
             'jabatan' => 'Jabatan',
             'jenjang_jabatan' => 'Jenjang Jabatan',
-            'id_karyawan' => 'Id Karyawan',
+            'id_pegawai' => 'Id Pegawai',
         ];
     }
 }
